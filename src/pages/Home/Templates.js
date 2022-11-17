@@ -3,35 +3,30 @@ import { sampleAPIData } from '../../reducers/API';
 import { useState, useEffect } from 'react';
 
 export default function Templates() {
-    // const allImages = sampleAPIData.data.categories.forEach((category) => {
-    //     category.subCategories.forEach((subCategory) => {
-    //         subCategory.images.forEach((image) => {
-    //             return image;
-    //         });
-    //     });
-    // });
     const [allImages, setAllImages] = useState([]);
 
-    useState(() => {
-        sampleAPIData.data.categories.map((category) => {
-            category.subCategories.map((subCategory) => {
-                subCategory.images.map((image) => {
+    useEffect(() => {
+        sampleAPIData.data.categories.forEach((category) => {
+            category.subCategories.forEach((subCategory) => {
+                subCategory.images.forEach((image) => {
                     setAllImages((prev) => [...prev, image]);
                 });
             });
         });
-        console.log(allImages);
     }, []);
+
+
+    console.log(allImages);
 
     return (
         <>
-            <h3 className='text-center'>Available templates</h3>
-            <Row xs={1} md={2} className="g-4">
+            <h3 className='text-center mb-3'>Available templates</h3>
+            <Row xs={1} md={3} className="g-4 text-center">
                 {
                     allImages.map((image, index) => {
                         return (
                             <Col>
-                                <img src={image.image_url} ></img>
+                                <img src={image.image_url} alt={image.name} ></img>
                             </Col>
                         );
                     })

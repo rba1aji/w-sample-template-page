@@ -1,4 +1,4 @@
-import SubCategories from "./SubCategories";
+import Categories from "./Categories";
 import Templates from "./Templates";
 
 export default function Home() {
@@ -9,12 +9,13 @@ export default function Home() {
             <tbody>
                 <tr>
                     <td className="col-1" style={{
-                        width: '20vw',
+                        width: '25vw',
+                        verticalAlign: 'top',
                     }}>
-                        <SubCategories />
+                        <Categories />
                     </td>
                     <td className="col-2" style={{
-                        width: '80vw',
+                        width: '75vw',
                     }}>
                         <Templates />
                     </td>
