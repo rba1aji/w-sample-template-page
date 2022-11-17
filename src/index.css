@@ -1,8 +1,14 @@
 body {
   background-color: #000814;
   font-family: Inter, sans-serif;
+  color: #fff;
+  min-height: 100vh;
 }
 
 .header {
   background-color: transparent;
+}
+
+.gallery-page {
+  width: 100vw;
 }

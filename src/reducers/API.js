@@ -5,7 +5,7 @@
 // data = {
 //     category1: [
 //         subCategory1: [
-//             images: []
+//             images: [url1,url2]
 //         ],
 //         subCategory2: [
 //             images: []
