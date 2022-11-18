@@ -38,14 +38,14 @@ export const sampleAPIData = {
                                 name: 'product 2',
                                 price: 2.99,
                                 description: 'product 2 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/240/300'
                             },
                             {
                                 id: 3,
                                 name: 'product 3',
                                 price: 3.99,
                                 description: 'product 3 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/220/300'
                             }
                         ]
                     },
@@ -58,7 +58,7 @@ export const sampleAPIData = {
                                 name: 'product 4',
                                 price: 4.99,
                                 description: 'product 4 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/200/301'
                             },
                             {
                                 id: 5,
@@ -72,7 +72,7 @@ export const sampleAPIData = {
                                 name: 'product 6',
                                 price: 6.99,
                                 description: 'product 6 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/200/302'
                             }
                         ]
                     }
@@ -91,21 +91,21 @@ export const sampleAPIData = {
                                 name: 'product 7',
                                 price: 7.99,
                                 description: 'product 7 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/200/303'
                             },
                             {
                                 id: 8,
                                 name: 'product 8',
                                 price: 8.99,
                                 description: 'product 8 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/205/300'
                             },
                             {
                                 id: 9,
                                 name: 'product 9',
                                 price: 9.99,
                                 description: 'product 9 description',
-                                image_url: 'https://picsum.photos/200/300'
+                                image_url: 'https://picsum.photos/200/311'
                             }
                         ]
                     },

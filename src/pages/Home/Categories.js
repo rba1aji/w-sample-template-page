@@ -2,6 +2,7 @@ import { sampleAPIData } from '../../reducers/API';
 import { useState, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
+import { AppState } from '../../reducers/AppContext';
 
 export default function SubCategories() {
 
@@ -18,6 +19,7 @@ export default function SubCategories() {
     // console.log(subCategories);
 
     const [categories, setCategories] = useState([]);
+    const { setSelectedCategory } = AppState();
 
     useEffect(() => {
         sampleAPIData.data.categories.forEach((category) => {
@@ -34,13 +36,15 @@ export default function SubCategories() {
                 {
                     categories.map((category, index) => {
                         return (
-                            <>
-                                <Form.Check>
-                                    <ListGroup.Item key={index} style={{ color: '#fff', background: 'transparent' }}>
-                                        {category.name}
-                                    </ListGroup.Item>
-                                </Form.Check>
-                            </>
+                            // <Form.Check type='radio'
+                            //     label={
+                            <ListGroup.Item key={index}
+                                style={{ color: '#fff', background: 'transparent' }}
+                                onClick={() => { setSelectedCategory(category) }}
+                            >
+                                {category.name}
+                            </ListGroup.Item>
+                            // } />
                         );
                     })
                 }
