@@ -1,13 +1,14 @@
 body {
-  background-color: #000814;
+  /* background-color: #000814; */
   font-family: Inter, sans-serif;
   color: #fff !important;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: black;
 }
 
 .header {
-  background-color: transparent;
+  background-color: #000814;
 }
 
 .gallery-page {

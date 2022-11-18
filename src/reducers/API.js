@@ -1,18 +1,32 @@
 // data{} -> categories[]            --> categories folders
-// categories[i] -> subCategory[]     --> subCategories folders
-// subCategory[i] -> superSubCategory[]  --> figma templates images
+// category[i] -> images[]      --> figma templates images
 
 // data = {
-//     category1: [
-//         subCategory1: [
-//             images: [url1,url2]
-//         ],
-//         subCategory2: [
-//             images: []
-//         ]
-//     ],
-//     category2: [],
-//     category3: []
+//     categories: [
+//         {
+//             id: 1,
+//             name: category1,
+//             images: [
+//                 {
+//                     id: "1",
+//                     name: "template1",
+//                     url: "https://picsum.photos/200/300"
+//                 },
+//                 {
+//                     id: "2",
+//                     name: "template2",
+//                     url: "https://picsum.photos/201/300"
+//                 },
+//             ]
+//         },
+//         {
+//             id: 2,
+//             name: category2,
+//             images: [
+//                 {}, {}
+//             ]
+//         }
+//     ]
 // }
 
 export const sampleAPIData = {
