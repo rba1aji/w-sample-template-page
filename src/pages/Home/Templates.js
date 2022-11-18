@@ -11,10 +11,8 @@ export default function Templates() {
         setImages([]);
         sampleAPIData.data.categories.forEach((category) => {
             if (category.id === selectedCategory.id) {
-                category.subCategories.forEach((subCategory) => {
-                    subCategory.images.forEach((image) => {
-                        setImages((prev) => [...prev, image]);
-                    });
+                category.images.forEach((image) => {
+                    setImages((prev) => [...prev, image]);
                 });
             }
         })

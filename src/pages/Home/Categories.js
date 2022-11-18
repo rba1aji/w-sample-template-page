@@ -6,22 +6,11 @@ import { AppState } from '../../reducers/AppContext';
 
 export default function SubCategories() {
 
-    // const [subCategories, setSubCategories] = useState([]);
-
-    // useEffect(() => {
-    //     sampleAPIData.data.categories.forEach((category) => {
-    //         category.subCategories.forEach((subCategory) => {
-    //             setSubCategories((prev) => [...prev, subCategory]);
-    //         });
-    //     });
-    // }, []);
-
-    // console.log(subCategories);
-
     const [categories, setCategories] = useState([]);
     const { setSelectedCategory } = AppState();
 
     useEffect(() => {
+        setCategories([]);
         sampleAPIData.data.categories.forEach((category) => {
             setCategories((prev) => [...prev, category]);
         });
