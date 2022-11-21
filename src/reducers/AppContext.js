@@ -1,17 +1,23 @@
 import { createContext, useState, useContext } from "react";
-// import { sampleAPIData } from './API';
+import { sampleAPIData } from './API';
 
 const appContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-    const [selectedCategory, setSelectedCategory] = useState();
-    const [selectedSubCategory, setSelectedSubCategory] = useState();
+
+    const [views, setViews] = useState({
+        desktop: 'Desktop',
+        mobile: 'Mobile',
+    });
+    const [selectedCategory, setSelectedCategory] = useState(sampleAPIData.data.categories[0]);
+    const [selectedView, setSelectedView] = useState("desktop");
     const [selectedImage, setSelectedImage] = useState();
 
     return (
         <appContext.Provider value={{
+            views,
             selectedCategory, setSelectedCategory,
-            selectedSubCategory, setSelectedSubCategory,
+            selectedView, setSelectedView,
             selectedImage, setSelectedImage
         }}>
             {children}

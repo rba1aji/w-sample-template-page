@@ -4,15 +4,18 @@ import { AppState } from '../../reducers/AppContext';
 
 export default function Images() {
     const [images, setImages] = useState([]);
-    const { selectedCategory, selectedSubCategory, setSelectedImage } = AppState();
+    const { selectedCategory, selectedView, setSelectedImage } = AppState();
 
     useEffect(() => {
         setImages([]);
-
-        selectedSubCategory?.images.forEach((image) => {
+        selectedCategory.images[selectedView]?.forEach((image) => {
             setImages((prev) => [...prev, image]);
         });
-    }, [selectedSubCategory]);
+    }, [selectedView, selectedCategory]);
+
+    useEffect(() => {
+        console.log(selectedCategory, "Images", images);
+    }, [images, selectedCategory]);
 
     const handleImageClick = (image) => {
         setSelectedImage(image);
@@ -21,7 +24,7 @@ export default function Images() {
 
     return (
         <>
-            <h3 className='text-center mb-3'>Category/{selectedCategory?.name}/{selectedSubCategory?.name}</h3>
+            <h3 className='text-center mb-3'>Category/{selectedCategory?.name}</h3>
             <Row xs={1} md={3} className="g-4 text-center">
                 {
                     images.map((image, index) => {

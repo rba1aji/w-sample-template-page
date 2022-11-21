@@ -2,11 +2,12 @@ import { sampleAPIData } from '../../reducers/API';
 import { useState, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { AppState } from '../../reducers/AppContext';
+import Views from './Views';
 
 export default function Categories() {
 
     const [categories, setCategories] = useState([]);
-    const { setSelectedCategory, setSelectedSubCategory } = AppState();
+    const { selectedCategory, setSelectedCategory, setSelectedView } = AppState();
 
     useEffect(() => {
         setCategories([]);
@@ -19,7 +20,7 @@ export default function Categories() {
     const handleCategoryClick = (category) => {
         console.log(category, "selected");
         setSelectedCategory(category);
-        setSelectedSubCategory();
+        setSelectedView("desktop");
     }
 
     return (
@@ -29,12 +30,17 @@ export default function Categories() {
                 {
                     categories.map((category, index) => {
                         return (
-                            <ListGroup.Item key={index}
-                                style={{ color: '#fff', background: 'transparent' }}
-                                onClick={() => handleCategoryClick(category)}
-                            >
-                                {category.name}
-                            </ListGroup.Item>
+                            <>
+                                <ListGroup.Item key={index}
+                                    style={{ color: '#fff', background: 'transparent' }}
+                                    onClick={() => handleCategoryClick(category)}
+                                >
+                                    {category.name}
+                                </ListGroup.Item>
+                                {
+                                    selectedCategory === category && <Views />
+                                }
+                            </>
                         );
                     })
                 }

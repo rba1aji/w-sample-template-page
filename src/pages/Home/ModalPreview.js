@@ -1,6 +1,5 @@
 import { AppState } from "../../reducers/AppContext";
 import { Modal, Button } from "react-bootstrap";
-import logo from '../../logo.svg';
 
 export default function ModalPreview() {
     const { selectedImage, setSelectedImage } = AppState();
@@ -25,7 +24,7 @@ export default function ModalPreview() {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Modal heading
+                            {selectedImage?.name}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -36,10 +35,12 @@ export default function ModalPreview() {
                                 display: 'block',
                                 margin: 'auto',
                                 width: '500px',
-                                height: '500px',
+                                height: '450px',
+                                visibility: 'visible',
+                                opacity: '1',
                             }}
+                            className='img-fluid'
                         />
-                        wef
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={handleOnPreviewClose}>Close</Button>
