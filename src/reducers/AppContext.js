@@ -1,14 +1,18 @@
 import { createContext, useState, useContext } from "react";
-import { sampleAPIData } from './API';
+// import { sampleAPIData } from './API';
 
 const appContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-    const [selectedCategory, setSelectedCategory] = useState(sampleAPIData.data.categories[0]);
+    const [selectedCategory, setSelectedCategory] = useState();
+    const [selectedSubCategory, setSelectedSubCategory] = useState();
+    const [selectedImage, setSelectedImage] = useState();
 
     return (
         <appContext.Provider value={{
-            selectedCategory, setSelectedCategory
+            selectedCategory, setSelectedCategory,
+            selectedSubCategory, setSelectedSubCategory,
+            selectedImage, setSelectedImage
         }}>
             {children}
         </appContext.Provider>
