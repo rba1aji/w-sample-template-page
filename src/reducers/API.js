@@ -110,7 +110,59 @@ export const sampleAPIData = {
                         }
                     ]
                 }
-            }
+            },
+            {
+                id: 3,
+                name: 'category 3',
+                images: {
+                    mobile: [
+                        {
+                            id: 1,
+                            name: 'template 1',
+                            price: 1.99,
+                            description: 'product 1 description',
+                            image_url: 'https://picsum.photos/206/301'
+                        },
+                        {
+                            id: 2,
+                            name: 'product 2',
+                            price: 2.99,
+                            description: 'product 2 description',
+                            image_url: 'https://picsum.photos/202/301'
+                        },
+                        {
+                            id: 3,
+                            name: 'product 3',
+                            price: 3.99,
+                            description: 'product 3 description',
+                            image_url: 'https://picsum.photos/212/301'
+                        }
+                    ],
+                    desktop: [
+                        {
+                            id: 1,
+                            name: 'template 1',
+                            price: 1.99,
+                            description: 'product 1 description',
+                            image_url: 'https://picsum.photos/200/310'
+                        },
+                        {
+                            id: 2,
+                            name: 'product 2',
+                            price: 2.99,
+                            description: 'product 2 description',
+                            image_url: 'https://picsum.photos/240/319'
+                        },
+                        {
+                            id: 3,
+                            name: 'product 3',
+                            price: 3.99,
+                            description: 'product 3 description',
+                            image_url: 'https://picsum.photos/204/310'
+                        }
+                    ]
+                }
+            },
         ]
     }
 }
