@@ -1,31 +1,17 @@
 // data = {
 //     categories: [
 //         {
-//             id: 1,
 //             name: category1,
-//             subgategories: [
+//             images: [
 //                 {
-//                     name: subcategory1,
-//                     images: [
-//                         {
-//                             id: "1",
-//                             name: "template1",
-//                             url: "https://picsum.photos/200/300"
-//                         },
-//                         {
-//                             id: "2",
-//                             name: "template2",
-//                             url: "https://picsum.photos/201/300"
-//                         },
-//                     ]
-//                 },
-//                 {}
+//                     mobile:[],
+//                     desktop:[]
+//                 }
 //             ]
 //         },
 //         {
-//             id: 2,
 //             name: category2,
-//             subCategories: [
+//             images: [
 //                 {}, {}
 //             ]
 //         }
