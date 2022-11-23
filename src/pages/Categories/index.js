@@ -33,6 +33,9 @@ export default function Categories() {
 
             <div
                 className="d-flex justify-content-end"
+                style={{
+                    transform: "translateY(-60px)",
+                }}
             >
                 <Button
                     variant='outline-light'
@@ -49,44 +52,59 @@ export default function Categories() {
                 }}>
                     <tbody>
                         <tr>
-                            <td><Search /></td>
-                            <td><Select /></td>
+                            {
+                                [<Search />, <Select />].map((filter, index) => {
+                                    return (
+                                        <td
+                                            key={index}
+                                            className='align-middle px-5'
+                                            style={{
+                                                width: "50%",
+                                            }}>
+                                            {filter}
+                                        </td>
+                                    );
+                                })
+                            }
                         </tr>
                     </tbody>
                 </table>
             }
 
+            <br /><br />
 
-            <Row xs={1} md={window.innerWidth < 600 ? 2 : 4} className="g-4 text-center">
-                {
-                    categories.map((category, index) => {
-                        return (
-                            <div
-                                key={index}
-                            >
-                                <Link
-                                    onClick={() => handleCategoryClick(category)}
-                                    to={`/category/${category?.name?.replaceAll(" ", "-")}`}
+            <div className='d-block'>
+                <Row xs={1} md={4} className="g-4">
+                    {
+                        categories.map((category, index) => {
+                            return (
+                                <div
+                                    key={index}
                                 >
-                                    <Col key={index}>
-                                        <div className="category-img-container">
-                                            <img
-                                                src={category.image}
-                                                alt={category.name}
-                                                className="category-image"
-                                                style={{ width: '100%' }}
-                                            />
-                                            <div className="category-img-name-middle">
-                                                <div className='category-name-on-img'>{category.name}</div>
+                                    <Link
+                                        onClick={() => handleCategoryClick(category)}
+                                        to={`/category/${category?.name?.replaceAll(" ", "-")}`}
+                                    >
+                                        <Col key={index}>
+                                            <div className="category-img-container">
+                                                <img
+                                                    src={category.image}
+                                                    alt={category.name}
+                                                    className="category-image"
+                                                    style={{ width: '100%' }}
+                                                />
+                                                <div className="category-img-name-middle">
+                                                    <div className='category-name-on-img'>{category.name}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Col>
-                                </Link>
-                            </div >
-                        );
-                    })
-                }
-            </Row >
+                                        </Col>
+                                    </Link>
+                                </div >
+                            );
+                        })
+                    }
+                </Row >
+            </div>
         </>
     );
 }
