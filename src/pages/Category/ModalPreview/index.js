@@ -45,14 +45,14 @@ export default function ModalPreview() {
                 centered
                 show={selectedTemplate}
                 onHide={handleOnPreviewClose}
-                className='modal-preview'
             >
                 <div
                     style={{
-                        backgroundColor: 'black',
+                        // backgroundColor: 'black',
                         border: '1px solid grey',
                         borderRadius: '15px',
                     }}
+                    className='modal-preview'
                 >
                     <Modal.Header
                         style={{ borderColor: 'transparent' }}

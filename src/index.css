@@ -4,8 +4,8 @@ body {
   color: #fff !important;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: black;
-  --bs-modal-bg: black !important;
+  background-color: #1d1d1f;
+  --bs-modal-bg: #1d1d1f !important;
 }
 
 .header {
