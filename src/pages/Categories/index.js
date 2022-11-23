@@ -1,8 +1,8 @@
+import { AppState } from '../../reducers/AppContext';
 import { sampleAPIData } from '../../reducers/API';
 import { useState, useEffect } from 'react';
-import { ListGroup } from 'react-bootstrap';
-import { AppState } from '../../reducers/AppContext';
-import Views from './Views';
+import { Link, } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
 export default function Categories() {
 
@@ -11,7 +11,6 @@ export default function Categories() {
 
     useEffect(() => {
         setCategories([]);
-
         sampleAPIData.data.categories.forEach((category) => {
             setCategories((prev) => [...prev, category]);
         });
@@ -23,28 +22,30 @@ export default function Categories() {
         setSelectedView("desktop");
     }
 
+
     return (
         <>
-            <h4 className='text-center'>Categories</h4>
-            <ListGroup className='text-center'>
+            <h2 className='text-center'>Transfer your product pages today</h2>
+            <Row xs={1} md={window.innerWidth < 600 ? 2 : 4} className="g-4 text-center">
                 {
                     categories.map((category, index) => {
                         return (
-                            <>
-                                <ListGroup.Item key={index}
-                                    style={{ color: '#fff', background: 'transparent' }}
+                            <div
+                                key={index}
+                            >
+                                <Link
                                     onClick={() => handleCategoryClick(category)}
+                                    to={`/category/${category.name}`}
                                 >
-                                    {category.name}
-                                </ListGroup.Item>
-                                {
-                                    selectedCategory === category && <Views />
-                                }
-                            </>
+                                    <Col key={index}>
+                                        {category.name}
+                                    </Col>
+                                </Link>
+                            </div >
                         );
                     })
                 }
-            </ListGroup>
+            </Row >
         </>
     );
 }

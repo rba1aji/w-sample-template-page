@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function Header() {
     return (
+
         <Navbar collapseOnSelect expand="lg" variant="dark" className='header'>
             <Container>
                 <Navbar.Brand href="#home">Weaveroo</Navbar.Brand>
@@ -25,7 +26,7 @@ export default function Header() {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href="#deets">Book a demo</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link eventKey={2} href='/categories'>
                             Sample template
                         </Nav.Link>
                     </Nav>
