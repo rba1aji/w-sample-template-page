@@ -2,7 +2,10 @@ import { AppState } from "../../../reducers/AppContext";
 import { Modal, Button } from "react-bootstrap";
 
 export default function ModalPreview() {
-    const { selectedTemplate, setSelectedTemplate } = AppState();
+    const {
+        selectedTemplate, setSelectedTemplate,
+        setSelectedView, selectedView
+    } = AppState();
 
     const handleOnPreviewClose = () => {
         setSelectedTemplate(null);
@@ -39,12 +42,71 @@ export default function ModalPreview() {
                 className='modal-preview'
             >
                 <div
-                    style={{ backgroundColor: 'black', border: '2px solid grey' }}
+                    style={{
+                        backgroundColor: 'black',
+                        border: '1px solid grey',
+                        borderRadius: '15px',
+                    }}
                 >
-                    <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            {selectedTemplate?.name}
-                        </Modal.Title>
+                    <Modal.Header
+                        style={{ borderColor: 'transparent' }}
+                    >
+                        <table style={{ width: '100%' }}>
+                            <tbody>
+                                <tr>
+                                    <td style={{ width: '50%' }}>
+                                        <Modal.Title id="contained-modal-title-vcenter">
+                                            {selectedTemplate?.name}
+                                        </Modal.Title>
+                                    </td>
+                                    <td
+                                        style={{
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        <Button
+                                            variant='outline-light'
+                                            onClick={() => setSelectedView('desktop')}
+                                        >
+                                            Desktop
+                                        </Button>
+                                    </td>
+
+                                    <td
+                                        style={{
+                                            textAlign: 'right',
+                                        }}
+                                    >
+                                        <Button
+                                            variant='outline-light'
+                                            onClick={() => setSelectedView('mobile')}
+                                        >
+                                            Mobile
+                                        </Button>
+                                    </td>
+
+
+                                    <td
+                                        style={{
+                                            textAlign: 'right',
+                                        }}
+                                    >
+                                        <Button
+                                            variant='outline-light'
+                                            onClick={handleOnDownload}
+                                        >
+                                            Free download
+                                        </Button>
+                                    </td>
+                                    <td>
+                                        <button type="button" className="btn-close btn-close-white px-2 align-middle"
+                                            data-bs-dismiss="modal" aria-label="Close"
+                                            onClick={handleOnPreviewClose}
+                                        ></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </Modal.Header>
                     <Modal.Body>
                         <img
@@ -53,14 +115,11 @@ export default function ModalPreview() {
                             style={{
                                 display: 'block',
                                 margin: 'auto',
+                                width: '100%',
                             }}
                             className='img-fluid'
                         />
                     </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={handleOnDownload}>Download</Button>
-                        <Button onClick={handleOnPreviewClose}>Close</Button>
-                    </Modal.Footer>
                 </div>
             </Modal>
         </>
