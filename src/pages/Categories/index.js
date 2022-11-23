@@ -32,7 +32,7 @@ export default function Categories() {
             <p className='text-center'>Checkout some popular template design</p>
 
             <div
-                className="d-flex justify-content-end"
+                className="d-flex justify-content-end pe-4"
                 style={{
                     transform: "translateY(-60px)",
                 }}
