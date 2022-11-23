@@ -5,7 +5,7 @@ export const sampleAPIData = {
             {
                 id: 1,
                 name: 'category 1',
-                image: 'https://https://picsum.photos/206/300',
+                image: 'https:picsum.photos/206/300',
                 templates: {
                     mobile: [
                         {
@@ -46,7 +46,7 @@ export const sampleAPIData = {
             {
                 id: 2,
                 name: 'category 2',
-                image: 'https://https://picsum.photos/206/300',
+                image: 'https:picsum.photos/206/300',
                 templates: {
                     mobile: [
                         {
@@ -77,7 +77,48 @@ export const sampleAPIData = {
             {
                 id: 3,
                 name: 'category 3',
-                image: 'https://https://picsum.photos/206/300',
+                image: 'https:picsum.photos/206/300',
+                templates: {
+                    mobile: [
+                        {
+                            id: 1,
+                            name: 'template 1',
+                            image_url: 'https://picsum.photos/206/301'
+                        },
+                        {
+                            id: 2,
+                            name: 'product 2',
+                            image_url: 'https://picsum.photos/202/301'
+                        },
+                        {
+                            id: 3,
+                            name: 'product 3',
+                            image_url: 'https://picsum.photos/212/301'
+                        }
+                    ],
+                    desktop: [
+                        {
+                            id: 1,
+                            name: 'template 1',
+                            image_url: 'https://picsum.photos/200/310'
+                        },
+                        {
+                            id: 2,
+                            name: 'product 2',
+                            image_url: 'https://picsum.photos/240/319'
+                        },
+                        {
+                            id: 3,
+                            name: 'product 3',
+                            image_url: 'https://picsum.photos/204/310'
+                        }
+                    ]
+                }
+            },
+            {
+                id: 4,
+                name: 'Category 4',
+                image: 'https:picsum.photos/206/300',
                 templates: {
                     mobile: [
                         {

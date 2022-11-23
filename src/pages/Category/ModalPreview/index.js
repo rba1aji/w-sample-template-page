@@ -1,4 +1,4 @@
-import { AppState } from "../../reducers/AppContext";
+import { AppState } from "../../../reducers/AppContext";
 import { Modal, Button } from "react-bootstrap";
 
 export default function ModalPreview() {
@@ -53,11 +53,6 @@ export default function ModalPreview() {
                             style={{
                                 display: 'block',
                                 margin: 'auto',
-                                // width: '500px',
-                                // height: '450px',
-                                // visibility: 'visible',
-                                // opacity: '1',
-                                // outline:'1px solid grey'
                             }}
                             className='img-fluid'
                         />
