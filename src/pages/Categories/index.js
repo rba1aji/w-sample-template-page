@@ -9,7 +9,7 @@ import Select from './Select';
 export default function Categories() {
 
     const [categories, setCategories] = useState([]);
-    const { setSelectedCategory, setSelectedView } = AppState();
+    const { setSelectedCategory, setSelectedView, categorySearchQuery } = AppState();
     const [showFilters, setShowFilters] = useState(false);
 
     useEffect(() => {
@@ -77,6 +77,11 @@ export default function Categories() {
                 <Row xs={1} md={4} className="g-4">
                     {
                         categories.map((category, index) => {
+                            if (categorySearchQuery) {
+                                if (!category.name.toLowerCase().includes(categorySearchQuery.toLowerCase())) {
+                                    return;
+                                }
+                            }
                             return (
                                 <div
                                     key={index}

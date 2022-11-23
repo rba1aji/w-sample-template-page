@@ -1,5 +1,6 @@
 import { AppState } from "../../../reducers/AppContext";
 import { Modal, Button } from "react-bootstrap";
+import { useEffect } from "react";
 
 export default function ModalPreview() {
     const {
@@ -12,7 +13,7 @@ export default function ModalPreview() {
         console.log(selectedTemplate, "closed");
     }
     const handleOnDownload = () => {
-        fetch(selectedTemplate.image_url, {
+        fetch(selectedTemplate[selectedView], {
             method: "GET",
             headers: {}
         })
@@ -21,7 +22,7 @@ export default function ModalPreview() {
                     const url = window.URL.createObjectURL(new Blob([buffer]));
                     const link = document.createElement("a");
                     link.href = url;
-                    link.setAttribute("download", `${selectedTemplate.image_url}.png`); //or any other extension
+                    link.setAttribute("download", `${selectedTemplate[selectedView]}.png`); //or any other extension
                     document.body.appendChild(link);
                     link.click();
                 });
@@ -30,6 +31,11 @@ export default function ModalPreview() {
                 console.log(err);
             });
     }
+
+    useEffect(() => {
+        console.log(selectedView, "selectedView");
+        console.log(selectedTemplate[selectedView], "selectedTemplate");
+    }, [selectedView]);
 
     return (
         <>
@@ -110,7 +116,7 @@ export default function ModalPreview() {
                     </Modal.Header>
                     <Modal.Body>
                         <img
-                            src={selectedTemplate?.image_url}
+                            src={selectedTemplate[selectedView]}
                             alt={selectedTemplate?.name}
                             style={{
                                 display: 'block',

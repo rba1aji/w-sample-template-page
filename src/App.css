@@ -37,3 +37,9 @@
     font-weight: bold;
     padding: 16px 32px;
 }
+
+Link,
+a {
+    color: #fff;
+    text-decoration: none;
+}

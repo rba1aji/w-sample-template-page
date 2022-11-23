@@ -1,6 +1,9 @@
 import { InputGroup, Form } from "react-bootstrap";
+import { AppState } from "../../reducers/AppContext";
 
 export default function Search() {
+    const { categorySearchQuery, setCategorySearchQuery } = AppState();
+
     return (
         <>
             <InputGroup size='sm'>
@@ -9,7 +12,12 @@ export default function Search() {
                     placeholder=""
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
-                    style={{ borderRightColor: 'transparent' }}
+                    style={{
+                        color: 'white',
+                        borderRightColor: 'transparent'
+                    }}
+                    value={categorySearchQuery}
+                    onChange={(e) => setCategorySearchQuery(e.target.value)}
                 />
                 <InputGroup.Text
                     id="basic-addon2"

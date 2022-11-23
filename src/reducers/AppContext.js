@@ -4,7 +4,6 @@ import { sampleAPIData } from './API';
 const appContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-
     const [views, setViews] = useState({
         desktop: 'Desktop',
         mobile: 'Mobile',
@@ -12,13 +11,15 @@ const AppContextProvider = ({ children }) => {
     const [selectedCategory, setSelectedCategory] = useState(sampleAPIData.data.categories[0]);
     const [selectedView, setSelectedView] = useState("desktop");
     const [selectedTemplate, setSelectedTemplate] = useState();
+    const [categorySearchQuery, setCategorySearchQuery] = useState('');
 
     return (
         <appContext.Provider value={{
             views,
             selectedCategory, setSelectedCategory,
             selectedView, setSelectedView,
-            selectedTemplate, setSelectedTemplate
+            selectedTemplate, setSelectedTemplate,
+            categorySearchQuery, setCategorySearchQuery,
         }}>
             {children}
         </appContext.Provider>

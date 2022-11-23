@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 export default function Index() {
     const [templates, setTemplates] = useState([]);
-    const { selectedCategory, selectedView, setSelectedTemplate } = AppState();
+    const { selectedCategory, selectedTemplate, setSelectedTemplate } = AppState();
 
     useEffect(() => {
         setTemplates([]);
-        selectedCategory.templates[selectedView]?.forEach((image) => {
-            setTemplates((prev) => [...prev, image]);
+        selectedCategory.templates?.forEach((template) => {
+            setTemplates((prev) => [...prev, template]);
         });
-    }, [selectedView, selectedCategory]);
+    }, [selectedCategory]);
 
     useEffect(() => {
         console.log(selectedCategory, "templates", templates);
@@ -36,7 +36,7 @@ export default function Index() {
                         return (
                             <Col key={index}>
                                 <img
-                                    src={template.image_url}
+                                    src={template.desktop} //template feature image !!
                                     alt={template.name}
                                     onClick={() => handleTemplateClick(template)}
                                 ></img>
@@ -45,7 +45,7 @@ export default function Index() {
                     })
                 }
             </Row >
-            <ModalPreview />
+            {selectedTemplate && <ModalPreview />}
         </>
     );
 
