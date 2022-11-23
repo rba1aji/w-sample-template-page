@@ -7,7 +7,7 @@ import { Row, Col } from 'react-bootstrap';
 export default function Categories() {
 
     const [categories, setCategories] = useState([]);
-    const { selectedCategory, setSelectedCategory, setSelectedView } = AppState();
+    const { setSelectedCategory, setSelectedView } = AppState();
 
     useEffect(() => {
         setCategories([]);
@@ -35,7 +35,7 @@ export default function Categories() {
                             >
                                 <Link
                                     onClick={() => handleCategoryClick(category)}
-                                    to={`/category/${category.name}`}
+                                    to={`/category/${category?.name?.replaceAll(" ", "-")}`}
                                 >
                                     <Col key={index}>
                                         {category.name}

@@ -5,23 +5,23 @@ import ModalPreview from './ModalPreview';
 import { Link } from 'react-router-dom';
 
 export default function Index() {
-    const [images, setImages] = useState([]);
-    const { selectedCategory, selectedView, setSelectedImage } = AppState();
+    const [templates, setTemplates] = useState([]);
+    const { selectedCategory, selectedView, setSelectedTemplate } = AppState();
 
     useEffect(() => {
-        setImages([]);
-        selectedCategory.images[selectedView]?.forEach((image) => {
-            setImages((prev) => [...prev, image]);
+        setTemplates([]);
+        selectedCategory.templates[selectedView]?.forEach((image) => {
+            setTemplates((prev) => [...prev, image]);
         });
     }, [selectedView, selectedCategory]);
 
     useEffect(() => {
-        console.log(selectedCategory, "Images", images);
-    }, [images, selectedCategory]);
+        console.log(selectedCategory, "templates", templates);
+    }, [templates, selectedCategory]);
 
-    const handleImageClick = (image) => {
-        setSelectedImage(image);
-        console.log(image, "selected");
+    const handleTemplateClick = (template) => {
+        setSelectedTemplate(template);
+        console.log(template, "selected");
     }
 
     return (
@@ -32,11 +32,13 @@ export default function Index() {
             </h3>
             <Row xs={1} md={3} className="g-4 text-center">
                 {
-                    images.map((image, index) => {
+                    templates.map((template, index) => {
                         return (
                             <Col key={index}>
-                                <img src={image.image_url} alt={image.name}
-                                    onClick={() => handleImageClick(image)}
+                                <img
+                                    src={template.image_url}
+                                    alt={template.name}
+                                    onClick={() => handleTemplateClick(template)}
                                 ></img>
                             </Col>
                         );

@@ -11,14 +11,14 @@ const AppContextProvider = ({ children }) => {
     });
     const [selectedCategory, setSelectedCategory] = useState(sampleAPIData.data.categories[0]);
     const [selectedView, setSelectedView] = useState("desktop");
-    const [selectedImage, setSelectedImage] = useState();
+    const [selectedTemplate, setSelectedTemplate] = useState();
 
     return (
         <appContext.Provider value={{
             views,
             selectedCategory, setSelectedCategory,
             selectedView, setSelectedView,
-            selectedImage, setSelectedImage
+            selectedTemplate, setSelectedTemplate
         }}>
             {children}
         </appContext.Provider>

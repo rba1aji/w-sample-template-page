@@ -2,14 +2,14 @@ import { AppState } from "../../reducers/AppContext";
 import { Modal, Button } from "react-bootstrap";
 
 export default function ModalPreview() {
-    const { selectedImage, setSelectedImage } = AppState();
+    const { selectedTemplate, setSelectedTemplate } = AppState();
 
     const handleOnPreviewClose = () => {
-        setSelectedImage(null);
-        console.log(selectedImage, "closed");
+        setSelectedTemplate(null);
+        console.log(selectedTemplate, "closed");
     }
     const handleOnDownload = () => {
-        fetch(selectedImage.image_url, {
+        fetch(selectedTemplate.image_url, {
             method: "GET",
             headers: {}
         })
@@ -18,7 +18,7 @@ export default function ModalPreview() {
                     const url = window.URL.createObjectURL(new Blob([buffer]));
                     const link = document.createElement("a");
                     link.href = url;
-                    link.setAttribute("download", `${selectedImage.image_url}.png`); //or any other extension
+                    link.setAttribute("download", `${selectedTemplate.image_url}.png`); //or any other extension
                     document.body.appendChild(link);
                     link.click();
                 });
@@ -34,7 +34,7 @@ export default function ModalPreview() {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                show={selectedImage}
+                show={selectedTemplate}
                 onHide={handleOnPreviewClose}
                 className='modal-preview'
             >
@@ -43,13 +43,13 @@ export default function ModalPreview() {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            {selectedImage?.name}
+                            {selectedTemplate?.name}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <img
-                            src={selectedImage?.image_url}
-                            alt={selectedImage?.name}
+                            src={selectedTemplate?.image_url}
+                            alt={selectedTemplate?.name}
                             style={{
                                 display: 'block',
                                 margin: 'auto',
