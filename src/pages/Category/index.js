@@ -27,9 +27,9 @@ export default function Index() {
 
     return (
         <>
-            <h3 className='mb-3'>
-                <Link to="/categories">Category</Link>
-                /{selectedCategory?.name}
+            <h3 className='mb-0 ps-5'>
+                <Link to="/categories">Category </Link>
+                / {selectedCategory?.name}
             </h3>
             <Row xs={1} md={3} className="g-4 text-center">
                 {

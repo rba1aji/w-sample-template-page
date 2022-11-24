@@ -1,0 +1,8 @@
+.modal-preview {
+    border: 1px solid transparent;
+    border-radius: 15px;
+}
+
+.modal-preview-options .btn {
+    font-size: small;
+}

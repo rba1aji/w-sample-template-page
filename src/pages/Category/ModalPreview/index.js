@@ -1,6 +1,7 @@
 import { AppState } from "../../../reducers/AppContext";
 import { Modal, Button } from "react-bootstrap";
 import { useEffect } from "react";
+import '../../../styles/ModalPreview.css';
 
 export default function ModalPreview() {
     const {
@@ -47,20 +48,16 @@ export default function ModalPreview() {
                 onHide={handleOnPreviewClose}
             >
                 <div
-                    style={{
-                        // backgroundColor: 'black',
-                        border: '1px solid grey',
-                        borderRadius: '15px',
-                    }}
                     className='modal-preview'
                 >
                     <Modal.Header
                         style={{ borderColor: 'transparent' }}
+                        className='pb-0'
                     >
-                        <table style={{ width: '100%' }}>
+                        <table style={{ width: '100%' }} className='modal-preview-options'>
                             <tbody>
                                 <tr>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '55%' }}>
                                         <Modal.Title id="contained-modal-title-vcenter">
                                             {selectedTemplate?.name}
                                         </Modal.Title>
@@ -80,7 +77,7 @@ export default function ModalPreview() {
 
                                     <td
                                         style={{
-                                            textAlign: 'right',
+                                            textAlign: 'center',
                                         }}
                                     >
                                         <Button
@@ -94,7 +91,7 @@ export default function ModalPreview() {
 
                                     <td
                                         style={{
-                                            textAlign: 'right',
+                                            textAlign: 'center',
                                         }}
                                     >
                                         <Button

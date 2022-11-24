@@ -30,7 +30,7 @@ export default function Categories() {
     return (
         <>
             <h2 className='text-center'>Transfer your product pages today</h2>
-            <p className='text-center'>Checkout some popular template design</p>
+            <p className='text-center mb-0'>Checkout some popular template design</p>
 
             <div
                 className='categories-page-container'
@@ -43,6 +43,7 @@ export default function Categories() {
                     }}
                 >
                     <Button
+                        className='px-4'
                         variant='outline-light'
                         onClick={() => setShowFilters(!showFilters)}
                     >
@@ -62,7 +63,7 @@ export default function Categories() {
                                         return (
                                             <td
                                                 key={index}
-                                                className='align-middle px-5'
+                                                className='align-middle categories-filter'
                                                 style={{
                                                     width: "50%",
                                                 }}>
