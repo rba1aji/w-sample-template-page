@@ -6,3 +6,7 @@
 .modal-preview-options .btn {
     font-size: small;
 }
+
+.modal-preview {
+    background-color: #1d1d1f !important;
+}
