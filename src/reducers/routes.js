@@ -3,6 +3,11 @@ import Category from "../pages/Category";
 
 export const routes = [
     {
+        path: "/",
+        element: null,
+        title: "Home"
+    },
+    {
         path: '/categories',
         element: <Categories />,
         title: 'Categories'

@@ -52,7 +52,7 @@ export default function Categories() {
                         }}
                         size='sm'
                     >
-                        <i class="bi bi-filter"> </i>
+                        <i className="bi bi-filter"> </i>
                         Filters
                     </Button>
                 </div>
