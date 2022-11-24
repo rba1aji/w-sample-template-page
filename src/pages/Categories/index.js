@@ -39,13 +39,18 @@ export default function Categories() {
                 <div
                     className="d-flex justify-content-end pe-4 me-4"
                     style={{
-                        transform: "translateY(-60px)",
+                        transform: "translateY(-50px)",
                     }}
                 >
                     <Button
                         className='px-4'
                         variant='outline-light'
                         onClick={() => setShowFilters(!showFilters)}
+                        style={{
+                            backgroundColor: showFilters ? "white" : "transparent",
+                            color: showFilters ? "black" : "white",
+                        }}
+                        size='sm'
                     >
                         Filters
                     </Button>
