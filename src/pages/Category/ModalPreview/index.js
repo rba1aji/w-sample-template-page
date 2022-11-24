@@ -58,49 +58,54 @@ export default function ModalPreview() {
                             <tbody>
                                 <tr>
                                     <td style={{ width: '55%' }}>
-                                        <Modal.Title id="contained-modal-title-vcenter">
+                                        <h3
+                                            id="contained-modal-title-vcenter"
+                                            className='mb-0'
+                                        >
                                             {selectedTemplate?.name}
-                                        </Modal.Title>
+                                        </h3>
                                     </td>
-                                    <td
-                                        style={{
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        <Button
-                                            variant='outline-light'
-                                            onClick={() => setSelectedView('desktop')}
-                                        >
-                                            Desktop
-                                        </Button>
-                                    </td>
-
-                                    <td
-                                        style={{
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        <Button
-                                            variant='outline-light'
-                                            onClick={() => setSelectedView('mobile')}
-                                        >
-                                            Mobile
-                                        </Button>
-                                    </td>
-
-
-                                    <td
-                                        style={{
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        <Button
-                                            variant='outline-light'
-                                            onClick={handleOnDownload}
-                                        >
-                                            Free download
-                                        </Button>
-                                    </td>
+                                    {
+                                        [
+                                            {
+                                                name: 'Desktop',
+                                                clickEvent: () => setSelectedView('desktop'),
+                                                active: selectedView === 'desktop'
+                                            },
+                                            {
+                                                name: 'Mobile',
+                                                clickEvent: () => setSelectedView('mobile'),
+                                                active: selectedView === 'mobile'
+                                            },
+                                            {
+                                                name: 'Free download',
+                                                clickEvent: handleOnDownload,
+                                                active: false
+                                            }
+                                        ]
+                                            .map((item, index) => {
+                                                return (
+                                                    <td
+                                                        key={index}
+                                                        style={{
+                                                            textAlign: 'center',
+                                                        }}
+                                                    >
+                                                        <Button
+                                                            variant='outline-light'
+                                                            onClick={item.clickEvent}
+                                                            style={{
+                                                                backgroundColor: item.active ? "white" : "transparent",
+                                                                color: item.active ? "black" : "white",
+                                                                borderRadius: '15px',
+                                                            }}
+                                                        >
+                                                            {item.name}
+                                                        </Button>
+                                                    </td>
+                                                )
+                                            })
+                                    }
                                     <td>
                                         <button type="button" className="btn-close btn-close-white px-2 align-middle"
                                             data-bs-dismiss="modal" aria-label="Close"
