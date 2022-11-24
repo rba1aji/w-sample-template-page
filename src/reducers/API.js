@@ -1,5 +1,8 @@
 import officeCharDesktop from '../assets/Greensoul_OfficeChair_desktop_view.jpg'
 import officeCharMobile from '../assets/Greensoul_OfficeChair_Mobile_view.jpg'
+import diomandBraceletDesktop from '../assets/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Desktop_view.jpg'
+import diomandBraceletMobile from '../assets/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Mobile_view.jpg'
+import greenBag from '../assets/small Hobo chain tote bag in green.jpg';
 
 export const sampleAPIData = {
     data: {
@@ -12,38 +15,38 @@ export const sampleAPIData = {
                     {
                         id: 1,
                         name: 'template 1',
-                        mobile: 'https://picsum.photos/207/300',
-                        desktop: 'https://picsum.photos/206/300'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 2,
                         name: 'product 2',
-                        mobile: 'https://picsum.photos/240/300',
-                        desktop: 'https://picsum.photos/240/340'
+                        mobile: officeCharMobile,
+                        desktop: officeCharDesktop
                     },
                     {
                         id: 3,
-                        name: 'product 3',
-                        mobile: 'https://picsum.photos/220/301',
-                        desktop: 'https://picsum.photos/220/300'
+                        name: 'Diamond Bracelet',
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 4,
                         name: 'template 4',
                         mobile: 'https://picsum.photos/206/300',
-                        desktop: 'https://picsum.photos/201/300'
+                        desktop: officeCharDesktop
                     },
                     {
                         id: 8,
-                        name: 'product 8',
-                        mobile: 'https://picsum.photos/240/301',
-                        desktop: 'https://picsum.photos/240/320'
+                        name: 'Bag Green',
+                        mobile: greenBag,
+                        desktop: greenBag
                     },
                     {
                         id: 5,
                         name: 'product 5',
-                        mobile: 'https://picsum.photos/220/299',
-                        desktop: 'https://picsum.photos/220/340'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     }
                 ]
             },
@@ -61,8 +64,8 @@ export const sampleAPIData = {
                     {
                         id: 2,
                         name: 'product 2',
-                        mobile: 'https://picsum.photos/241/310',
-                        desktop: 'https://picsum.photos/201/310'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
@@ -73,8 +76,8 @@ export const sampleAPIData = {
                     {
                         id: 2,
                         name: 'product 5',
-                        mobile: 'https://picsum.photos/220/301',
-                        desktop: 'https://picsum.photos/200/301'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     }
                 ]
             },
@@ -93,13 +96,13 @@ export const sampleAPIData = {
                         id: 2,
                         name: 'product 2',
                         mobile: 'https://picsum.photos/202/301',
-                        desktop: 'https://picsum.photos/202/303'
+                        desktop: greenBag
                     },
                     {
                         id: 3,
                         name: 'product 3',
-                        mobile: 'https://picsum.photos/212/301',
-                        desktop: 'https://picsum.photos/202/301'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 1,
@@ -116,8 +119,8 @@ export const sampleAPIData = {
                     {
                         id: 3,
                         name: 'product 6',
-                        mobile: 'https://picsum.photos/204/309',
-                        desktop: 'https://picsum.photos/204/310'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     }
                 ]
             },
@@ -130,25 +133,25 @@ export const sampleAPIData = {
                         id: 1,
                         name: 'template 1',
                         mobile: 'https://picsum.photos/206/301',
-                        desktop: 'https://picsum.photos/200/310'
+                        desktop: greenBag
                     },
                     {
                         id: 2,
-                        name: 'product 2',
-                        mobile: 'https://picsum.photos/202/301',
-                        desktop: 'https://picsum.photos/240/319'
+                        name: 'Diamond Bracelet',
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
                         name: 'product 3',
                         mobile: 'https://picsum.photos/212/301',
-                        desktop: 'https://picsum.photos/204/310'
+                        desktop: greenBag
                     },
                     {
                         id: 4,
                         name: 'template 4',
-                        mobile: 'https://picsum.photos/200/310',
-                        desktop: 'https://picsum.photos/206/301'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 5,
@@ -159,8 +162,8 @@ export const sampleAPIData = {
                     {
                         id: 6,
                         name: 'product 6',
-                        mobile: 'https://picsum.photos/204/310',
-                        desktop: 'https://picsum.photos/212/301'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     }
                 ]
             },
@@ -172,14 +175,14 @@ export const sampleAPIData = {
                     {
                         id: 1,
                         name: 'template 1',
-                        mobile: 'https://picsum.photos/206/301',
-                        desktop: 'https://corvidukcom-my.sharepoint.com/:i:/r/personal/deepa_corviduk_com/Documents/Clients%20Website%20Data/Marketing%20work%20-%20category%20wise/Bags/Cocoon/small%20Hobo%20chain%20tote%20bag%20in%20green.jpg?csf=1&web=1&e=Kejgu8'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 2,
                         name: 'product 2',
-                        mobile: 'https://picsum.photos/202/301',
-                        desktop: 'https://picsum.photos/240/319'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
@@ -196,8 +199,8 @@ export const sampleAPIData = {
                     {
                         id: 5,
                         name: 'product 5',
-                        mobile: 'https://picsum.photos/240/319',
-                        desktop: 'https://picsum.photos/202/301'
+                        mobile: diomandBraceletMobile,
+                        desktop: diomandBraceletDesktop
                     },
                     {
                         id: 6,

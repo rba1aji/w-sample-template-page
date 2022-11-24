@@ -1,8 +1,22 @@
 .template-feature-image {
-    width: 300px;
+    width: 350px;
     height: 250px;
     object-fit: cover;
     object-position: 0% 0%;
     margin-top: 10%;
     border-radius: 15px;
+}
+
+.template-feature-image:hover {
+    transform: scale(1.05);
+    animation: hover-scroll 10s ease;
+}
+
+@keyframes hover-scroll {
+    0% {
+        object-position: 0% 0%;
+    }
+    100% {
+        object-position: 0% 100%;
+    }
 }
