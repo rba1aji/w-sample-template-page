@@ -46,6 +46,7 @@ export default function ModalPreview() {
                 centered
                 show={selectedTemplate}
                 onHide={handleOnPreviewClose}
+                dialogClassName="modal-80w"
             >
                 <div
                     className='modal-preview'
