@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { AppState } from '../../reducers/AppContext';
 import ModalPreview from './ModalPreview';
 import { Link } from 'react-router-dom';
+import '../../styles/Category.css';
 
 export default function Index() {
     const [templates, setTemplates] = useState([]);
@@ -26,7 +27,7 @@ export default function Index() {
 
     return (
         <>
-            <h3 className='ms-5 mb-3'>
+            <h3 className='mb-3'>
                 <Link to="/categories">Category</Link>
                 /{selectedCategory?.name}
             </h3>
@@ -39,6 +40,7 @@ export default function Index() {
                                     src={template.desktop} //template feature image !!
                                     alt={template.name}
                                     onClick={() => handleTemplateClick(template)}
+                                    className='img-fluid template-feature-image'
                                 ></img>
                             </Col>
                         );

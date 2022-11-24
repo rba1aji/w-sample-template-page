@@ -5,6 +5,7 @@ import { Link, } from 'react-router-dom';
 import { Row, Col, Button } from 'react-bootstrap';
 import Search from './Search';
 import Select from './Select';
+import '../../styles/Categories.css';
 
 export default function Categories() {
 
@@ -32,79 +33,76 @@ export default function Categories() {
             <p className='text-center'>Checkout some popular template design</p>
 
             <div
-                className="d-flex justify-content-end pe-4"
-                style={{
-                    transform: "translateY(-60px)",
-                }}
+                className='categories-page-container'
             >
-                <Button
-                    variant='outline-light'
-                    onClick={() => setShowFilters(!showFilters)}
+
+                <div
+                    className="d-flex justify-content-end pe-4 me-4"
+                    style={{
+                        transform: "translateY(-60px)",
+                    }}
                 >
-                    Filters
-                </Button>
-            </div>
+                    <Button
+                        variant='outline-light'
+                        onClick={() => setShowFilters(!showFilters)}
+                    >
+                        Filters
+                    </Button>
+                </div>
 
-            {
-                showFilters &&
-                <table style={{
-                    width: "50vw",
-                }}>
-                    <tbody>
-                        <tr>
-                            {
-                                [<Search />, <Select />].map((filter, index) => {
-                                    return (
-                                        <td
-                                            key={index}
-                                            className='align-middle px-5'
-                                            style={{
-                                                width: "50%",
-                                            }}>
-                                            {filter}
-                                        </td>
-                                    );
-                                })
-                            }
-                        </tr>
-                    </tbody>
-                </table>
-            }
+                {
+                    showFilters &&
+                    <table style={{
+                        width: "50vw",
+                    }}>
+                        <tbody>
+                            <tr>
+                                {
+                                    [<Search />, <Select />].map((filter, index) => {
+                                        return (
+                                            <td
+                                                key={index}
+                                                className='align-middle px-5'
+                                                style={{
+                                                    width: "50%",
+                                                }}>
+                                                {filter}
+                                            </td>
+                                        );
+                                    })
+                                }
+                            </tr>
+                        </tbody>
+                    </table>
+                }
 
-            <br /><br />
+                <br /><br />
 
-            <div className='d-block'>
-                <Row xs={1} md={4} className="g-4">
+                <Row xs={1} md={4} className="g-4 text-center">
                     {
                         categories.map((category, index) => {
                             if (categorySearchQuery) {
                                 if (!category.name.toLowerCase().includes(categorySearchQuery.toLowerCase())) {
-                                    return;
+                                    return null;
                                 }
                             }
                             return (
-                                <div
-                                    key={index}
+                                <Col key={index}
+                                    as={Link}
+                                    onClick={() => handleCategoryClick(category)}
+                                    to={`/category/${category?.name?.replaceAll(" ", "-")}`}
                                 >
-                                    <Link
-                                        onClick={() => handleCategoryClick(category)}
-                                        to={`/category/${category?.name?.replaceAll(" ", "-")}`}
-                                    >
-                                        <Col key={index}>
-                                            <div className="category-img-container">
-                                                <img
-                                                    src={category.image}
-                                                    alt={category.name}
-                                                    className="category-image"
-                                                    style={{ width: '100%' }}
-                                                />
-                                                <div className="category-img-name-middle">
-                                                    <div className='category-name-on-img'>{category.name}</div>
-                                                </div>
-                                            </div>
-                                        </Col>
-                                    </Link>
-                                </div >
+                                    <div className="category-img-container text-center">
+                                        <img
+                                            src={category.image}
+                                            alt={category.name}
+                                            className="category-image img-fluid"
+                                        />
+                                        <div className="category-img-name-middle">
+                                            <div className='category-name-on-img'>{category.name}</div>
+                                        </div>
+                                    </div>
+                                </Col>
                             );
                         })
                     }
