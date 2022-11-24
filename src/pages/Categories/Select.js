@@ -11,6 +11,7 @@ export default function Select() {
 
     return (
         <>
+            <Form.Label className='mb-1'>Select category</Form.Label>
             <Form.Select
                 className='bg-transparent text-white'
                 style={{ width: '100%' }}

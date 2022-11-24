@@ -6,6 +6,7 @@ export default function Search() {
 
     return (
         <>
+            <Form.Label className='mb-1'>Search category</Form.Label>
             <InputGroup size='sm'>
                 <Form.Control
                     className='bg-transparent '
