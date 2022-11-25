@@ -50,12 +50,15 @@ export default function Index() {
                     templates?.map((template, index) => {
                         return (
                             <Col key={index}>
-                                <img
-                                    src={template.desktop} //template feature image !!
-                                    alt={template.name}
-                                    onClick={() => handleTemplateClick(template)}
-                                    className='img-fluid template-feature-image'
-                                ></img>
+                                <div className='template-feature-image-container'>
+                                    <img
+                                        src={template.desktop} //template feature image !!
+                                        alt={template.name}
+                                        onClick={() => handleTemplateClick(template)}
+                                        className='img-fluid template-feature-image'
+                                    />
+                                    <h5 className='template-name-on-ft-image py-2' >{template.name}</h5>
+                                </div>
                             </Col>
                         );
                     })
