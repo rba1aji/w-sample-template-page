@@ -4,17 +4,31 @@ import { AppState } from '../../reducers/AppContext';
 import ModalPreview from './ModalPreview';
 import { Link } from 'react-router-dom';
 import '../../styles/Category.css';
+import { useParams } from 'react-router-dom';
 
 export default function Index() {
     const [templates, setTemplates] = useState([]);
-    const { selectedCategory, selectedTemplate, setSelectedTemplate } = AppState();
+    const {
+        categories,
+        selectedCategory, setSelectedCategory,
+        selectedTemplate, setSelectedTemplate
+    } = AppState();
+    const categoryNameInUrl = useParams()?.categoryName;
 
     useEffect(() => {
+        console.log("categoryNameInUrl", categoryNameInUrl);
+        setSelectedCategory(
+            categories.find((category) => category.name === categoryNameInUrl)
+        )
+    }, [categoryNameInUrl, categories]);
+
+    useEffect(() => {
+        console.log("selectedCategory", selectedCategory);
         setTemplates([]);
-        selectedCategory.templates?.forEach((template) => {
+        selectedCategory?.templates?.forEach((template) => {
             setTemplates((prev) => [...prev, template]);
         });
-    }, [selectedCategory]);
+    }, [categoryNameInUrl, selectedCategory, selectedCategory?.templates]);
 
     useEffect(() => {
         console.log(selectedCategory, "templates", templates);
@@ -31,9 +45,9 @@ export default function Index() {
                 <Link to="/categories">Category </Link>
                 / {selectedCategory?.name}
             </h3>
-            <Row xs={1} md={3} className="g-4 text-center">
+            <Row xs={1} md={3} className="mx-3 g-4 text-center">
                 {
-                    templates.map((template, index) => {
+                    templates?.map((template, index) => {
                         return (
                             <Col key={index}>
                                 <img

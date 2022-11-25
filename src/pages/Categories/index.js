@@ -9,16 +9,12 @@ import '../../styles/Categories.css';
 
 export default function Categories() {
 
-    const [categories, setCategories] = useState([]);
-    const { setSelectedCategory, setSelectedView, categorySearchQuery } = AppState();
+    const {
+        categories, setCategories,
+        setSelectedCategory, setSelectedView,
+        categorySearchQuery
+    } = AppState();
     const [showFilters, setShowFilters] = useState(false);
-
-    useEffect(() => {
-        setCategories([]);
-        sampleAPIData.data.categories.forEach((category) => {
-            setCategories((prev) => [...prev, category]);
-        });
-    }, []);
 
     const handleCategoryClick = (category) => {
         console.log(category, "selected");
