@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import { routes } from './reducers/routes';
 
-function App() {
+export default function App() {
+  
   return (
     <div className="">
       <BrowserRouter>
@@ -29,4 +30,3 @@ function App() {
   );
 }
 
-export default App;

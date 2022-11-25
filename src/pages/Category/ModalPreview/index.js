@@ -41,8 +41,8 @@ export default function ModalPreview() {
     return (
         <>
             <Modal
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
+                size="xl"
+                // aria-labelledby="contained-modal-title-vcenter"
                 centered
                 show={selectedTemplate}
                 onHide={handleOnPreviewClose}
