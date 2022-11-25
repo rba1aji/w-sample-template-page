@@ -1,5 +1,5 @@
 .template-feature-image {
-    width: 400px;
+    width: 425px;
     height: 300px;
     object-fit: cover;
     object-position: 0% 0%;
@@ -8,8 +8,9 @@
 }
 
 .template-feature-image:hover {
-    transform: scale(1.05);
-    animation: hover-scroll 10s ease;
+    transform: scale(1.025);
+    transition: 0.5s;
+    animation: hover-scroll 10s ease-out;
 }
 
 @keyframes hover-scroll {
