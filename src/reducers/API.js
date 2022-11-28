@@ -4,6 +4,10 @@ import diomandBraceletDesktop from '../assets/Roberto Coin Princess Flower 4.22c
 import diomandBraceletMobile from '../assets/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Mobile_view.jpg'
 import greenBag from '../assets/small Hobo chain tote bag in green.jpg';
 
+function tempTemplatesUrl(view, id) {
+    return `https://weaveroo-test.s3.ap-south-1.amazonaws.com/weaveroo-sample-template/footwear/design${id}/${view}/footwear-design-${id}-${view}.jpg`
+}
+
 let sampleData = {
     data: {
         categories: [
@@ -33,7 +37,7 @@ let sampleData = {
                     {
                         id: 4,
                         name: 'Template 4',
-                        mobile: 'https://picsum.photos/206/300',
+                        mobile: tempTemplatesUrl('mobile', 1),
                         desktop: officeCharDesktop
                     },
                     {
@@ -58,8 +62,8 @@ let sampleData = {
                     {
                         id: 1,
                         name: 'Template 1',
-                        mobile: 'https://picsum.photos/200/302',
-                        desktop: 'https://picsum.photos/200/301'
+                        mobile: tempTemplatesUrl('mobile', 5),
+                        desktop: tempTemplatesUrl('desktop', 5)
                     },
                     {
                         id: 2,
@@ -70,8 +74,8 @@ let sampleData = {
                     {
                         id: 3,
                         name: 'Template 3',
-                        mobile: 'https://picsum.photos/200/300',
-                        desktop: 'https://picsum.photos/203/300'
+                        mobile: tempTemplatesUrl('mobile', 3),
+                        desktop: tempTemplatesUrl('desktop', 3)
                     },
                     {
                         id: 2,
@@ -95,7 +99,7 @@ let sampleData = {
                     {
                         id: 2,
                         name: 'Template 2',
-                        mobile: 'https://picsum.photos/202/301',
+                        mobile: greenBag,
                         desktop: greenBag
                     },
                     {
@@ -106,14 +110,14 @@ let sampleData = {
                     {
                         id: 1,
                         name: 'Template 4',
-                        mobile: 'https://picsum.photos/209/310',
-                        desktop: 'https://picsum.photos/200/310'
+                        mobile: tempTemplatesUrl('mobile', 14),
+                        desktop: tempTemplatesUrl('desktop', 14)
                     },
                     {
                         id: 2,
                         name: 'Template 5',
-                        mobile: 'https://picsum.photos/200/310',
-                        desktop: 'https://picsum.photos/240/319'
+                        mobile: tempTemplatesUrl('mobile', 15),
+                        desktop: tempTemplatesUrl('desktop', 15)
                     },
                     {
                         id: 3,
@@ -131,7 +135,7 @@ let sampleData = {
                     {
                         id: 1,
                         name: 'Template 1',
-                        mobile: 'https://picsum.photos/206/301',
+                        mobile: tempTemplatesUrl('mobile', 4),
                         desktop: greenBag
                     },
                     {
@@ -143,7 +147,7 @@ let sampleData = {
                     {
                         id: 3,
                         name: 'Template 3',
-                        mobile: 'https://picsum.photos/212/301',
+                        mobile: tempTemplatesUrl('mobile', 6),
                         desktop: greenBag
                     },
                     {
@@ -155,8 +159,8 @@ let sampleData = {
                     {
                         id: 5,
                         name: 'Template 5',
-                        mobile: 'https://picsum.photos/240/319',
-                        desktop: 'https://picsum.photos/202/301'
+                        mobile: tempTemplatesUrl('mobile', 7),
+                        desktop: greenBag
                     },
                     {
                         id: 6,
@@ -169,7 +173,7 @@ let sampleData = {
             {
                 id: 4,
                 name: 'Jwellery',
-                image: 'https://picsum.photos/207/300',
+                image: diomandBraceletDesktop,
                 templates: [
                     {
                         id: 1,
@@ -186,14 +190,14 @@ let sampleData = {
                     {
                         id: 3,
                         name: 'Template 3',
-                        mobile: 'https://picsum.photos/212/301',
-                        desktop: 'https://picsum.photos/204/310'
+                        mobile: tempTemplatesUrl('mobile', 8),
+                        desktop: tempTemplatesUrl('desktop', 8)
                     },
                     {
                         id: 4,
                         name: 'Template 4',
-                        mobile: 'https://picsum.photos/200/310',
-                        desktop: 'https://picsum.photos/206/301'
+                        mobile: tempTemplatesUrl('mobile', 9),
+                        desktop: tempTemplatesUrl('desktop', 9)
                     },
                     {
                         id: 5,
@@ -204,8 +208,8 @@ let sampleData = {
                     {
                         id: 6,
                         name: 'Template 6',
-                        mobile: 'https://picsum.photos/204/310',
-                        desktop: 'https://picsum.photos/212/301'
+                        mobile: tempTemplatesUrl('mobile', 10),
+                        desktop: tempTemplatesUrl('desktop', 10)
                     }
                 ]
             },
@@ -213,20 +217,20 @@ let sampleData = {
     }
 }
 
-function tempTemplatesUrl(view, id) {
-    return `https://weaveroo-test.s3.ap-south-1.amazonaws.com/weaveroo-sample-template/footwear/design${id}/desktop/footwear-design-${id}-${view}.jpg`
-}
 
 export function sampleAPIData() {
     let data = sampleData;
     // edit footwear category to add more templates
+    data.data.categories[1].templates = [];
     for (let i = 1; i < 34; i++) {
-        data.data.categories[1].templates.push({
-            id: i,
-            name: `Template ${i}`,
-            mobile: tempTemplatesUrl('mobile', i),
-            desktop: tempTemplatesUrl('desktop', i)
-        })
+        if (i === 19) continue;
+        else
+            data.data.categories[1].templates.push({
+                id: i,
+                name: `Template ${i}`,
+                mobile: tempTemplatesUrl('mobile', i),
+                desktop: tempTemplatesUrl('desktop', i)
+            })
     }
     return data;
 }

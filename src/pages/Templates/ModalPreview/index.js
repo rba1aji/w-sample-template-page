@@ -49,6 +49,10 @@ export default function ModalPreview() {
                                         overflow: 'hidden',
                                     }}
                                     className='img-fluid '
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "https://www.freeiconspng.com/uploads/no-image-icon-11.PNG";
+                                    }}
                                 />
                                 :
                                 <h3 className='text-center pt-5 mt-5 fw-normal'>No Preview Available</h3>
