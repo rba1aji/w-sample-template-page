@@ -1,5 +1,6 @@
 import { InputGroup, Form } from "react-bootstrap";
 import { AppState } from "../../reducers/AppContext";
+import SearchSuggestion from "./Select";
 
 export default function Search() {
     const { categorySearchQuery, setCategorySearchQuery } = AppState();
@@ -28,6 +29,7 @@ export default function Search() {
                     <i className="bi bi-search text-white"></i>
                 </InputGroup.Text>
             </InputGroup>
+            <SearchSuggestion />
         </>
     );
 }

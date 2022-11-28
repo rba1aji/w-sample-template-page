@@ -1,6 +1,6 @@
 import Search from './Search';
-import Select from './Select'; 
-import  {Button}  from 'react-bootstrap';
+import Select from './Select';
+import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 export default function Filters() {
@@ -26,18 +26,20 @@ export default function Filters() {
                     size='sm'
                 >
                     <i className="bi bi-filter"> </i>
-                    Filters
+                    Filter
                 </Button>
             </div>
 
             {/* Filter Options */}
             <table style={{
-                width: "50vw",
+                // width: "50vw",
+                width: "27.5vw",
                 display: showFilters ? "block" : "none",
             }}>
                 <tbody>
                     <tr>
                         {[<Search />, <Select />].map((filter, index) => {
+                            if (index === 0) return null;
                             return (
                                 <td
                                     key={index}
