@@ -1,9 +1,10 @@
-import { sampleAPIData } from "../../reducers/API"
 import { Form } from "react-bootstrap"
 import { AppState } from "../../reducers/AppContext";
 
 export default function Select() {
-    const { setCategorySearchQuery } = AppState();
+    const {
+        categories, setCategorySearchQuery
+    } = AppState();
 
     const handleCategoryOptionClick = (categoryName) => {
         categoryName === 'All' ? setCategorySearchQuery('') : setCategorySearchQuery(categoryName);
@@ -24,7 +25,7 @@ export default function Select() {
                     {"All"}
                 </option>
                 {
-                    sampleAPIData.data.categories.map((category, index) => {
+                    categories?.map((category, index) => {
                         return (
                             <option
                                 key={index}

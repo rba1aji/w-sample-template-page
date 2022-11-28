@@ -9,14 +9,14 @@ const AppContextProvider = ({ children }) => {
         desktop: 'Desktop',
         mobile: 'Mobile',
     });
-    const [selectedCategory, setSelectedCategory] = useState(sampleAPIData.data.categories[0]);
+    const [selectedCategory, setSelectedCategory] = useState(sampleAPIData().data.categories[0]);
     const [selectedView, setSelectedView] = useState("desktop");
     const [selectedTemplate, setSelectedTemplate] = useState();
     const [categorySearchQuery, setCategorySearchQuery] = useState('');
 
     useEffect(() => {
         setCategories([]);
-        sampleAPIData.data.categories.forEach((category) => {
+        sampleAPIData()?.data?.categories?.forEach((category) => {
             setCategories((prev) => [...prev, category]);
         });
     }, []);
