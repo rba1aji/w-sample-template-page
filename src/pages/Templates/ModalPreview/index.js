@@ -1,5 +1,5 @@
 import { AppState } from "../../../reducers/AppContext";
-import { Modal} from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import '../../../styles/ModalPreview.css';
 import ModalHeader from "./ModalHeader";
 
@@ -9,11 +9,7 @@ export default function ModalPreview() {
         selectedView
     } = AppState();
 
-    const handleOnPreviewClose = () => {
-        setSelectedTemplate(null);
-        console.log(selectedTemplate, "closed");
-    }
-
+    const handleOnPreviewClose = () => setSelectedTemplate(null);
 
     return (
         <>

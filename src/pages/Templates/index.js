@@ -16,28 +16,19 @@ export default function Index() {
     const categoryNameInUrl = useParams()?.categoryName;
 
     useEffect(() => {
-        console.log("categoryNameInUrl", categoryNameInUrl);
         setSelectedCategory(
-            categories.find((category) => category.name === categoryNameInUrl)
+            categories.find((category) => category.name === categoryNameInUrl.replace(/-/g, ' '))
         )
     }, [categoryNameInUrl, categories, setSelectedCategory]);
 
     useEffect(() => {
-        console.log("selectedCategory", selectedCategory);
         setTemplates([]);
         selectedCategory?.templates?.forEach((template) => {
             setTemplates((prev) => [...prev, template]);
         });
     }, [categoryNameInUrl, selectedCategory, selectedCategory?.templates]);
 
-    useEffect(() => {
-        console.log(selectedCategory, "templates", templates);
-    }, [templates, selectedCategory]);
-
-    const handleTemplateClick = (template) => {
-        setSelectedTemplate(template);
-        console.log(template, "selected");
-    }
+    const handleTemplateClick = (template) => setSelectedTemplate(template);
 
     return (
         <>

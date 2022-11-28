@@ -8,10 +8,7 @@ export default function ModalHeader() {
         selectedTemplate, setSelectedTemplate,
     } = AppState();
 
-    const handleOnPreviewClose = () => {
-        setSelectedTemplate(null);
-        console.log(selectedTemplate, "closed");
-    }
+    const handleOnPreviewClose = () => setSelectedTemplate(null);
 
     return (
         <Modal.Header

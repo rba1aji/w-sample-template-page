@@ -1,23 +1,18 @@
 import { AppState } from '../../reducers/AppContext';
-import { sampleAPIData } from '../../reducers/API';
-import { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
-import Search from './Search';
-import Select from './Select';
+import { Row, Col } from 'react-bootstrap';
 import '../../styles/Categories.css';
+import Filters from './Filters';
 
 export default function Categories() {
 
     const {
-        categories, setCategories,
+        categories,
         setSelectedCategory, setSelectedView,
         categorySearchQuery
     } = AppState();
-    const [showFilters, setShowFilters] = useState(false);
 
     const handleCategoryClick = (category) => {
-        console.log(category, "selected");
         setSelectedCategory(category);
         setSelectedView("desktop");
     }
@@ -32,52 +27,7 @@ export default function Categories() {
                 className='categories-page-container'
             >
 
-                <div
-                    className="d-flex justify-content-end pe-4 me-4"
-                    style={{
-                        transform: "translateY(-50px)",
-                    }}
-                >
-                    <Button
-                        className='px-4'
-                        variant='outline-light'
-                        onClick={() => setShowFilters(!showFilters)}
-                        style={{
-                            backgroundColor: showFilters ? "white" : "transparent",
-                            color: showFilters ? "black" : "white",
-                        }}
-                        size='sm'
-                    >
-                        <i className="bi bi-filter"> </i>
-                        Filters
-                    </Button>
-                </div>
-
-                {
-                    showFilters &&
-                    <table style={{
-                        width: "50vw",
-                    }}>
-                        <tbody>
-                            <tr>
-                                {
-                                    [<Search />, <Select />].map((filter, index) => {
-                                        return (
-                                            <td
-                                                key={index}
-                                                className='align-middle categories-filter'
-                                                style={{
-                                                    width: "50%",
-                                                }}>
-                                                {filter}
-                                            </td>
-                                        );
-                                    })
-                                }
-                            </tr>
-                        </tbody>
-                    </table>
-                }
+                <Filters />
 
                 <br /><br />
 
