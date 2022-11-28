@@ -20,7 +20,7 @@ export default function Index() {
         setSelectedCategory(
             categories.find((category) => category.name === categoryNameInUrl)
         )
-    }, [categoryNameInUrl, categories]);
+    }, [categoryNameInUrl, categories, setSelectedCategory]);
 
     useEffect(() => {
         console.log("selectedCategory", selectedCategory);

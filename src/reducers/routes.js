@@ -1,5 +1,5 @@
 import Categories from "../pages/Categories";
-import Category from "../pages/Category";
+import Templates from "../pages/Templates";
 
 export const routes = [
     // {
@@ -15,7 +15,7 @@ export const routes = [
     },
     {
         path: '/category/:categoryName',
-        element: <Category />,
+        element: <Templates />,
         title: 'Selected Category'
     }
 ];
