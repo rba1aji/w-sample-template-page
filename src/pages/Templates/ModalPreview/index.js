@@ -32,16 +32,21 @@ export default function ModalPreview() {
                             overflow: 'scroll',
                         }}
                     >
-                        <img
-                            src={selectedTemplate[selectedView]}
-                            alt={selectedTemplate?.name}
-                            style={{
-                                display: 'block',
-                                margin: 'auto',
-                                width: selectedView === 'mobile' ? '35%' : '90%',
-                            }}
-                            className='img-fluid py-1'
-                        />
+                        {
+                            selectedTemplate[selectedView] ?
+                                <img
+                                    src={selectedTemplate[selectedView]}
+                                    alt={selectedTemplate?.name}
+                                    style={{
+                                        display: 'block',
+                                        margin: 'auto',
+                                        width: selectedView === 'mobile' ? '35%' : '90%',
+                                    }}
+                                    className='img-fluid py-1'
+                                />
+                                :
+                                <h3 className='text-center pt-5 mt-5 fw-normal'>No Preview Available</h3>
+                        }
                     </Modal.Body>
                 </div>
             </Modal>
