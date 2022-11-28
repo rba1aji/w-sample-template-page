@@ -24,13 +24,18 @@ export default function ModalPreview() {
             >
                 <div
                     className='modal-preview px-5'
+                    style={{
+                        overflow: 'hidden',
+                    }}
                 >
                     <ModalHeader />
                     <Modal.Body
                         style={{
                             height: '87vh',
-                            overflow: 'scroll',
+                            overflowY: 'scroll',
+                            overflowX: 'hidden',
                         }}
+                        className='pb-5'
                     >
                         {
                             selectedTemplate[selectedView] ?
@@ -41,8 +46,13 @@ export default function ModalPreview() {
                                         display: 'block',
                                         margin: 'auto',
                                         width: selectedView === 'mobile' ? '35%' : '90%',
+                                        overflow: 'hidden',
                                     }}
-                                    className='img-fluid py-1'
+                                    className='img-fluid '
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "https://www.freeiconspng.com/uploads/no-image-icon-11.PNG";
+                                    }}
                                 />
                                 :
                                 <h3 className='text-center pt-5 mt-5 fw-normal'>No Preview Available</h3>

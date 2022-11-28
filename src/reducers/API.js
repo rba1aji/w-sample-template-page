@@ -4,7 +4,11 @@ import diomandBraceletDesktop from '../assets/Roberto Coin Princess Flower 4.22c
 import diomandBraceletMobile from '../assets/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Mobile_view.jpg'
 import greenBag from '../assets/small Hobo chain tote bag in green.jpg';
 
-export const sampleAPIData = {
+function tempTemplatesUrl(view, id) {
+    return `https://weaveroo-test.s3.ap-south-1.amazonaws.com/weaveroo-sample-template/footwear/design${id}/${view}/footwear-design-${id}-${view}.jpg`
+}
+
+let sampleData = {
     data: {
         categories: [
             {
@@ -14,37 +18,37 @@ export const sampleAPIData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'template 1',
+                        name: 'Template 1',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 2,
-                        name: 'product 2',
+                        name: 'Template 2',
                         mobile: officeCharMobile,
                         desktop: officeCharDesktop
                     },
                     {
                         id: 3,
-                        name: 'Diamond Bracelet',
+                        name: 'Template 3',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 4,
-                        name: 'template 4',
-                        mobile: 'https://picsum.photos/206/300',
+                        name: 'Template 4',
+                        mobile: tempTemplatesUrl('mobile', 1),
                         desktop: officeCharDesktop
                     },
                     {
                         id: 8,
-                        name: 'Bag Green',
+                        name: 'Template 5',
                         mobile: greenBag,
                         desktop: greenBag
                     },
                     {
                         id: 5,
-                        name: 'product 5',
+                        name: 'Template 6',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -57,25 +61,25 @@ export const sampleAPIData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'template 1',
-                        mobile: 'https://picsum.photos/200/302',
-                        desktop: 'https://picsum.photos/200/301'
+                        name: 'Template 1',
+                        mobile: tempTemplatesUrl('mobile', 5),
+                        desktop: tempTemplatesUrl('desktop', 5)
                     },
                     {
                         id: 2,
-                        name: 'product 2',
+                        name: 'Template 2',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
-                        name: 'template 4',
-                        mobile: 'https://picsum.photos/200/300',
-                        desktop: 'https://picsum.photos/203/300'
+                        name: 'Template 3',
+                        mobile: tempTemplatesUrl('mobile', 3),
+                        desktop: tempTemplatesUrl('desktop', 3)
                     },
                     {
                         id: 2,
-                        name: 'product 5',
+                        name: 'Template 4',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -88,36 +92,36 @@ export const sampleAPIData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'Office Char',
+                        name: 'Template 1',
                         mobile: officeCharMobile,
                         desktop: officeCharDesktop
                     },
                     {
                         id: 2,
-                        name: 'product 2',
-                        mobile: 'https://picsum.photos/202/301',
+                        name: 'Template 2',
+                        mobile: greenBag,
                         desktop: greenBag
                     },
                     {
                         id: 3,
-                        name: 'product 3',
+                        name: 'Template 3',
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 1,
-                        name: 'template 4',
-                        mobile: 'https://picsum.photos/209/310',
-                        desktop: 'https://picsum.photos/200/310'
+                        name: 'Template 4',
+                        mobile: tempTemplatesUrl('mobile', 14),
+                        desktop: tempTemplatesUrl('desktop', 14)
                     },
                     {
                         id: 2,
-                        name: 'product 5',
-                        mobile: 'https://picsum.photos/200/310',
-                        desktop: 'https://picsum.photos/240/319'
+                        name: 'Template 5',
+                        mobile: tempTemplatesUrl('mobile', 15),
+                        desktop: tempTemplatesUrl('desktop', 15)
                     },
                     {
                         id: 3,
-                        name: 'product 6',
+                        name: 'Template 6',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -130,37 +134,37 @@ export const sampleAPIData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'template 1',
-                        mobile: 'https://picsum.photos/206/301',
+                        name: 'Template 1',
+                        mobile: tempTemplatesUrl('mobile', 4),
                         desktop: greenBag
                     },
                     {
                         id: 2,
-                        name: 'Diamond Bracelet',
+                        name: 'Template 2',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
-                        name: 'product 3',
-                        mobile: 'https://picsum.photos/212/301',
+                        name: 'Template 3',
+                        mobile: tempTemplatesUrl('mobile', 6),
                         desktop: greenBag
                     },
                     {
                         id: 4,
-                        name: 'template 4',
+                        name: 'Template 4',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 5,
-                        name: 'product 5',
-                        mobile: 'https://picsum.photos/240/319',
-                        desktop: 'https://picsum.photos/202/301'
+                        name: 'Template 5',
+                        mobile: tempTemplatesUrl('mobile', 7),
+                        desktop: greenBag
                     },
                     {
                         id: 6,
-                        name: 'product 6',
+                        name: 'Template 6',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -169,43 +173,43 @@ export const sampleAPIData = {
             {
                 id: 4,
                 name: 'Jwellery',
-                image: 'https://picsum.photos/206/300',
+                image: diomandBraceletDesktop,
                 templates: [
                     {
                         id: 1,
-                        name: 'template 1',
+                        name: 'Template 1',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 2,
-                        name: 'product 2',
+                        name: 'Template 2',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
-                        name: 'product 3',
-                        mobile: 'https://picsum.photos/212/301',
-                        desktop: 'https://picsum.photos/204/310'
+                        name: 'Template 3',
+                        mobile: tempTemplatesUrl('mobile', 8),
+                        desktop: tempTemplatesUrl('desktop', 8)
                     },
                     {
                         id: 4,
-                        name: 'template 4',
-                        mobile: 'https://picsum.photos/200/310',
-                        desktop: 'https://picsum.photos/206/301'
+                        name: 'Template 4',
+                        mobile: tempTemplatesUrl('mobile', 9),
+                        desktop: tempTemplatesUrl('desktop', 9)
                     },
                     {
                         id: 5,
-                        name: 'product 5',
+                        name: 'Template 5',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 6,
-                        name: 'product 6',
-                        mobile: 'https://picsum.photos/204/310',
-                        desktop: 'https://picsum.photos/212/301'
+                        name: 'Template 6',
+                        mobile: tempTemplatesUrl('mobile', 10),
+                        desktop: tempTemplatesUrl('desktop', 10)
                     }
                 ]
             },
@@ -213,6 +217,23 @@ export const sampleAPIData = {
     }
 }
 
+
+export function sampleAPIData() {
+    let data = sampleData;
+    // edit footwear category to add more templates
+    data.data.categories[1].templates = [];
+    for (let i = 1; i < 34; i++) {
+        if (i === 19) continue;
+        else
+            data.data.categories[1].templates.push({
+                id: i,
+                name: `Template ${i}`,
+                mobile: tempTemplatesUrl('mobile', i),
+                desktop: tempTemplatesUrl('desktop', i)
+            })
+    }
+    return data;
+}
 
 
 

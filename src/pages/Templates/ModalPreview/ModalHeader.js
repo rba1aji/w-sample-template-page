@@ -44,7 +44,7 @@ export default function ModalHeader() {
                                                 color: item.active ? "black" : "white",
                                                 borderRadius: '15px',
                                             }}
-                                            size='md'
+                                            size='lg'
                                         >
                                             {item.name}
                                         </Button>
