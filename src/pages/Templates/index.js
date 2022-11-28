@@ -16,33 +16,24 @@ export default function Index() {
     const categoryNameInUrl = useParams()?.categoryName;
 
     useEffect(() => {
-        console.log("categoryNameInUrl", categoryNameInUrl);
         setSelectedCategory(
-            categories.find((category) => category.name === categoryNameInUrl)
+            categories.find((category) => category.name === categoryNameInUrl.replace(/-/g, ' '))
         )
-    }, [categoryNameInUrl, categories]);
+    }, [categoryNameInUrl, categories, setSelectedCategory]);
 
     useEffect(() => {
-        console.log("selectedCategory", selectedCategory);
         setTemplates([]);
         selectedCategory?.templates?.forEach((template) => {
             setTemplates((prev) => [...prev, template]);
         });
     }, [categoryNameInUrl, selectedCategory, selectedCategory?.templates]);
 
-    useEffect(() => {
-        console.log(selectedCategory, "templates", templates);
-    }, [templates, selectedCategory]);
-
-    const handleTemplateClick = (template) => {
-        setSelectedTemplate(template);
-        console.log(template, "selected");
-    }
+    const handleTemplateClick = (template) => setSelectedTemplate(template);
 
     return (
         <>
             <h3 className='mb-0 ps-5'>
-                <Link to="/categories">Category </Link>
+                <Link to="/">Category </Link>
                 / {selectedCategory?.name}
             </h3>
             <Row xs={1} md={3} className="mx-3 g-4 text-center">
@@ -50,12 +41,15 @@ export default function Index() {
                     templates?.map((template, index) => {
                         return (
                             <Col key={index}>
-                                <img
-                                    src={template.desktop} //template feature image !!
-                                    alt={template.name}
-                                    onClick={() => handleTemplateClick(template)}
-                                    className='img-fluid template-feature-image'
-                                ></img>
+                                <div className='template-feature-image-container'>
+                                    <img
+                                        src={template.desktop} //template feature image !!
+                                        alt={template.name}
+                                        onClick={() => handleTemplateClick(template)}
+                                        className='img-fluid template-feature-image'
+                                    />
+                                    <h5 className='template-name-on-ft-image py-2' >{template.name}</h5>
+                                </div>
                             </Col>
                         );
                     })

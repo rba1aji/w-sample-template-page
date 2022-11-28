@@ -1,20 +1,21 @@
 import Categories from "../pages/Categories";
-import Category from "../pages/Category";
+import Templates from "../pages/Templates";
 
 export const routes = [
+    // {
+    //     path: "/",
+    //     element: null,
+    //     title: "Home"
+    // },
     {
-        path: "/",
-        element: null,
-        title: "Home"
-    },
-    {
-        path: '/categories',
+        // path: '/categories',
+        path: '/',
         element: <Categories />,
         title: 'Categories'
     },
     {
         path: '/category/:categoryName',
-        element: <Category />,
+        element: <Templates />,
         title: 'Selected Category'
     }
 ];

@@ -16,10 +16,10 @@ export default function Select() {
                 className='bg-transparent text-white'
                 style={{ width: '100%' }}
                 size='sm'
+                onChange={(e) => handleCategoryOptionClick(e.target.value)}
             >
                 <option
-                    className='bg-transparent'
-                    onClick={() => handleCategoryOptionClick('All')}
+                    className='bg-black text-white py-2'
                 >
                     {"All"}
                 </option>
@@ -29,7 +29,7 @@ export default function Select() {
                             <option
                                 key={index}
                                 value={category.name}
-                                className="bg-transparent"
+                                className="bg-black text-white py-2"
                                 onClick={() => handleCategoryOptionClick(category.name)}
                             >
                                 {category.name}

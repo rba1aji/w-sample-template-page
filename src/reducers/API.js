@@ -101,7 +101,6 @@ export const sampleAPIData = {
                     {
                         id: 3,
                         name: 'product 3',
-                        mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {

@@ -1,4 +1,10 @@
+.template-feature-image-container {
+    position: relative;
+    width: 100%;
+}
+
 .template-feature-image {
+    margin: auto;
     width: 400px;
     height: 300px;
     object-fit: cover;
@@ -8,15 +14,37 @@
 }
 
 .template-feature-image:hover {
-    transform: scale(1.05);
-    animation: hover-scroll 10s ease;
+    transform: scale(1.025);
+    transition: 0.5s;
+    animation: hover-scroll 10s ease-out;
 }
 
 @keyframes hover-scroll {
     0% {
         object-position: 0% 0%;
     }
+
     100% {
         object-position: 0% 100%;
     }
+}
+
+.template-name-on-ft-image {
+    width: 405px;
+    position: absolute;
+    top: 94%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 160%;
+    font-weight: bold;
+    border-radius: 0 0 15px 15px ;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.template-feature-image-container:hover .template-name-on-ft-image {
+    opacity: 1;
 }
