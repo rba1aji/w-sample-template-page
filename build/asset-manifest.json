@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fa0adf14.css",
+    "main.js": "/static/js/main.bdff0e7f.js",
+    "static/js/787.67892ce7.chunk.js": "/static/js/787.67892ce7.chunk.js",
+    "static/media/Greensoul_OfficeChair_desktop_view.jpg": "/static/media/Greensoul_OfficeChair_desktop_view.a4e3595cfaf46a696f6f.jpg",
+    "static/media/Greensoul_OfficeChair_Mobile_view.jpg": "/static/media/Greensoul_OfficeChair_Mobile_view.643b2c13e32cf2a15187.jpg",
+    "static/media/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Desktop_view.jpg": "/static/media/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Desktop_view.27617bbcd6a5e7f696a9.jpg",
+    "static/media/small Hobo chain tote bag in green.jpg": "/static/media/small Hobo chain tote bag in green.e46b2cdf2487bc8785fe.jpg",
+    "static/media/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Mobile_view.jpg": "/static/media/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Mobile_view.b16a1e28dcac3b25d242.jpg",
+    "index.html": "/index.html",
+    "main.fa0adf14.css.map": "/static/css/main.fa0adf14.css.map",
+    "main.bdff0e7f.js.map": "/static/js/main.bdff0e7f.js.map",
+    "787.67892ce7.chunk.js.map": "/static/js/787.67892ce7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa0adf14.css",
+    "static/js/main.bdff0e7f.js"
+  ]
+}
