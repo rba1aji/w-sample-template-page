@@ -1,13 +1,15 @@
 import { Form } from "react-bootstrap"
 import { AppState } from "../../reducers/AppContext";
+import { useNavigate } from 'react-router-dom';
 
 export default function Select() {
     const {
-        categories, setCategorySearchQuery
+        categories,
     } = AppState();
+    const navigate = useNavigate();
 
     const handleCategoryOptionClick = (categoryName) => {
-        categoryName === 'All' ? setCategorySearchQuery('') : setCategorySearchQuery(categoryName);
+        navigate(`/category/${categoryName?.replaceAll(" ", "-")}`);
     }
 
     return (
@@ -31,7 +33,6 @@ export default function Select() {
                                 key={index}
                                 value={category.name}
                                 className="bg-black text-white py-2"
-                                onClick={() => handleCategoryOptionClick(category.name)}
                             >
                                 {category.name}
                             </option>

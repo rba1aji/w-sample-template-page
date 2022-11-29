@@ -5,10 +5,10 @@ import '../../styles/Categories.css';
 import Filters from './Filters';
 
 export default function Categories() {
-
     const {
         categories,
-        setSelectedCategory, setSelectedView,
+        setSelectedCategory,
+        setSelectedView,
         categorySearchQuery
     } = AppState();
 

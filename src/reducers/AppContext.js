@@ -5,11 +5,7 @@ const appContext = createContext();
 
 const AppContextProvider = ({ children }) => {
     const [categories, setCategories] = useState([]);
-    const [views, setViews] = useState({
-        desktop: 'Desktop',
-        mobile: 'Mobile',
-    });
-    const [selectedCategory, setSelectedCategory] = useState(sampleAPIData().data.categories[0]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedView, setSelectedView] = useState("desktop");
     const [selectedTemplate, setSelectedTemplate] = useState();
     const [categorySearchQuery, setCategorySearchQuery] = useState('');
@@ -24,7 +20,6 @@ const AppContextProvider = ({ children }) => {
     return (
         <appContext.Provider value={{
             categories, setCategories,
-            views,
             selectedCategory, setSelectedCategory,
             selectedView, setSelectedView,
             selectedTemplate, setSelectedTemplate,

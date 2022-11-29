@@ -1,6 +1,6 @@
 import { InputGroup, Form } from "react-bootstrap";
 import { AppState } from "../../reducers/AppContext";
-import SearchSuggestion from "./Select";
+import SearchSuggestion from "./SearchSuggestion";
 
 export default function Search() {
     const { categorySearchQuery, setCategorySearchQuery } = AppState();
