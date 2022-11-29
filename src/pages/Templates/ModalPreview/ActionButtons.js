@@ -9,14 +9,16 @@ export default function ActionButtons() {
     const handleOnDownload = () => {
         fetch(selectedTemplate[selectedView], {
             method: "GET",
-            headers: {}
+            headers: {},
+            mode: 'no-cors'
         })
             .then(response => {
                 response.arrayBuffer().then(function (buffer) {
                     const url = window.URL.createObjectURL(new Blob([buffer]));
+                    const imgtype = selectedTemplate[selectedView].split('.').pop();; 
                     const link = document.createElement("a");
                     link.href = url;
-                    link.setAttribute("download", `${selectedTemplate[selectedView]}.png`); //or any other extension
+                    link.setAttribute("download", `${selectedTemplate.name}.${imgtype}`);
                     document.body.appendChild(link);
                     link.click();
                 });
