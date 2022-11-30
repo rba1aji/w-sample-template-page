@@ -1,9 +1,7 @@
 import { InputGroup, Form } from "react-bootstrap";
-import { AppState } from "../../reducers/AppContext";
-import SearchSuggestion from "./SearchSuggestion";
 
-export default function Search() {
-    const { categorySearchQuery, setCategorySearchQuery } = AppState();
+export default function Search(props) {
+    const { searchQuery, setSearchQuery } = props;
 
     return (
         <>
@@ -18,8 +16,8 @@ export default function Search() {
                         color: 'white',
                         borderRightColor: 'transparent'
                     }}
-                    value={categorySearchQuery}
-                    onChange={(e) => setCategorySearchQuery(e.target.value)}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <InputGroup.Text
                     id="basic-addon2"
@@ -29,7 +27,6 @@ export default function Search() {
                     <i className="bi bi-search text-white"></i>
                 </InputGroup.Text>
             </InputGroup>
-            <SearchSuggestion />
         </>
     );
 }
