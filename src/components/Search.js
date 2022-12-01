@@ -1,14 +1,16 @@
 import { InputGroup, Form } from "react-bootstrap";
 
 export default function Search(props) {
-    const { searchQuery, setSearchQuery } = props;
+    const { searchQuery, setSearchQuery, label } = props;
 
     return (
         <>
-            <Form.Label className='mb-1'>Search category</Form.Label>
+            {
+                label && <Form.Label className='mb-1'>{label}</Form.Label>
+            }
             <InputGroup size='sm'>
                 <Form.Control
-                    className='bg-transparent '
+                    className='bg-transparent'
                     placeholder=""
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
