@@ -45,7 +45,11 @@ export default function Index() {
                         style={{ width: '30%' }}
                         className='text-end pe-5'
                     >
-                        <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                        <Search
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            placeholder={'search templates'}
+                        />
                     </td>
                 </tr></tbody>
             </table>

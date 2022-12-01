@@ -4,11 +4,7 @@ import diomandBraceletDesktop from '../assets/Roberto Coin Princess Flower 4.22c
 import diomandBraceletMobile from '../assets/Roberto Coin Princess Flower 4.22ct Malachite and 0.18ct Diamond Bracelet_Mobile_view.jpg'
 import greenBag from '../assets/small Hobo chain tote bag in green.jpg';
 
-function tempTemplatesUrl(view, id) {
-    return `https://weaveroo-test.s3.ap-south-1.amazonaws.com/weaveroo-sample-template/footwear/design${id}/${view}/footwear-design-${id}-${view}.jpg`
-}
-
-let sampleData = {
+export const sampleAPIData = {
     data: {
         categories: [
             {
@@ -18,37 +14,37 @@ let sampleData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'Template 1',
+                        name: 'template 1',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 2,
-                        name: 'Template 2',
+                        name: 'product 2',
                         mobile: officeCharMobile,
                         desktop: officeCharDesktop
                     },
                     {
                         id: 3,
-                        name: 'Template 3',
+                        name: 'Diamond Bracelet',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 4,
-                        name: 'Template 4',
-                        mobile: tempTemplatesUrl('mobile', 1),
+                        name: 'template 4',
+                        mobile: 'https://picsum.photos/206/300',
                         desktop: officeCharDesktop
                     },
                     {
                         id: 8,
-                        name: 'Template 5',
+                        name: 'Bag Green',
                         mobile: greenBag,
                         desktop: greenBag
                     },
                     {
                         id: 5,
-                        name: 'Template 6',
+                        name: 'product 5',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -61,25 +57,25 @@ let sampleData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'Template 1',
-                        mobile: tempTemplatesUrl('mobile', 5),
-                        desktop: tempTemplatesUrl('desktop', 5)
+                        name: 'template 1',
+                        mobile: 'https://picsum.photos/200/302',
+                        desktop: 'https://picsum.photos/200/301'
                     },
                     {
                         id: 2,
-                        name: 'Template 2',
+                        name: 'product 2',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
-                        name: 'Template 3',
-                        mobile: tempTemplatesUrl('mobile', 3),
-                        desktop: tempTemplatesUrl('desktop', 3)
+                        name: 'template 4',
+                        mobile: 'https://picsum.photos/200/300',
+                        desktop: 'https://picsum.photos/203/300'
                     },
                     {
                         id: 2,
-                        name: 'Template 4',
+                        name: 'product 5',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -92,36 +88,36 @@ let sampleData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'Template 1',
+                        name: 'Office Char',
                         mobile: officeCharMobile,
                         desktop: officeCharDesktop
                     },
                     {
                         id: 2,
-                        name: 'Template 2',
-                        mobile: greenBag,
+                        name: 'product 2',
+                        mobile: 'https://picsum.photos/202/301',
                         desktop: greenBag
                     },
                     {
                         id: 3,
-                        name: 'Template 3',
+                        name: 'product 3',
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 1,
-                        name: 'Template 4',
-                        mobile: tempTemplatesUrl('mobile', 14),
-                        desktop: tempTemplatesUrl('desktop', 14)
+                        name: 'template 4',
+                        mobile: 'https://picsum.photos/209/310',
+                        desktop: 'https://picsum.photos/200/310'
                     },
                     {
                         id: 2,
-                        name: 'Template 5',
-                        mobile: tempTemplatesUrl('mobile', 15),
-                        desktop: tempTemplatesUrl('desktop', 15)
+                        name: 'product 5',
+                        mobile: 'https://picsum.photos/200/310',
+                        desktop: 'https://picsum.photos/240/319'
                     },
                     {
                         id: 3,
-                        name: 'Template 6',
+                        name: 'product 6',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -134,37 +130,37 @@ let sampleData = {
                 templates: [
                     {
                         id: 1,
-                        name: 'Template 1',
-                        mobile: tempTemplatesUrl('mobile', 4),
+                        name: 'template 1',
+                        mobile: 'https://picsum.photos/206/301',
                         desktop: greenBag
                     },
                     {
                         id: 2,
-                        name: 'Template 2',
+                        name: 'Diamond Bracelet',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
-                        name: 'Template 3',
-                        mobile: tempTemplatesUrl('mobile', 6),
+                        name: 'product 3',
+                        mobile: 'https://picsum.photos/212/301',
                         desktop: greenBag
                     },
                     {
                         id: 4,
-                        name: 'Template 4',
+                        name: 'template 4',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 5,
-                        name: 'Template 5',
-                        mobile: tempTemplatesUrl('mobile', 7),
-                        desktop: greenBag
+                        name: 'product 5',
+                        mobile: 'https://picsum.photos/240/319',
+                        desktop: 'https://picsum.photos/202/301'
                     },
                     {
                         id: 6,
-                        name: 'Template 6',
+                        name: 'product 6',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     }
@@ -173,47 +169,49 @@ let sampleData = {
             {
                 id: 4,
                 name: 'Jwellery',
-                image: diomandBraceletDesktop,
+                image: 'https://picsum.photos/206/300',
                 templates: [
                     {
                         id: 1,
-                        name: 'Template 1',
+                        name: 'template 1',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 2,
-                        name: 'Template 2',
+                        name: 'product 2',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 3,
-                        name: 'Template 3',
-                        mobile: tempTemplatesUrl('mobile', 8),
-                        desktop: tempTemplatesUrl('desktop', 8)
+                        name: 'product 3',
+                        mobile: 'https://picsum.photos/212/301',
+                        desktop: 'https://picsum.photos/204/310'
                     },
                     {
                         id: 4,
-                        name: 'Template 4',
-                        mobile: tempTemplatesUrl('mobile', 9),
-                        desktop: tempTemplatesUrl('desktop', 9)
+                        name: 'template 4',
+                        mobile: 'https://picsum.photos/200/310',
+                        desktop: 'https://picsum.photos/206/301'
                     },
                     {
                         id: 5,
-                        name: 'Template 5',
+                        name: 'product 5',
                         mobile: diomandBraceletMobile,
                         desktop: diomandBraceletDesktop
                     },
                     {
                         id: 6,
-                        name: 'Template 6',
-                        mobile: tempTemplatesUrl('mobile', 10),
-                        desktop: tempTemplatesUrl('desktop', 10)
+                        name: 'product 6',
+                        mobile: 'https://picsum.photos/204/310',
+                        desktop: 'https://picsum.photos/212/301'
                     }
                 ]
             },
         ]
     }
 }
+
+
 

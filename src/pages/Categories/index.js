@@ -30,6 +30,7 @@ export default function Categories() {
 
                 <Filters
                     searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+                    label={'Search category'}
                 />
 
                 <br /><br />

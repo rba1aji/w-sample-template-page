@@ -12,7 +12,7 @@ const AppContextProvider = ({ children }) => {
 
     useEffect(() => {
         setCategories([]);
-        sampleAPIData()?.data?.categories?.forEach((category) => {
+        sampleAPIData?.data?.categories?.forEach((category) => {
             setCategories((prev) => [...prev, category]);
         });
     }, []);
