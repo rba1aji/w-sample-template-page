@@ -35,7 +35,7 @@ export default function Index() {
         setSelectedView('desktop');
         setSelectedTemplate(template);
     }
-    
+
     return (
         <>
             <table className='templatespg-header'
@@ -63,7 +63,7 @@ export default function Index() {
                 {
                     templates?.map((template, index) => {
                         if (searchQuery) {
-                            if (!template.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+                            if (template.name !== searchQuery) {
                                 return null;
                             }
                         }
