@@ -12,6 +12,7 @@ export default function Template() {
         e.target.src = "https://via.placeholder.com/500x500.png?text=No+Preview+Available";
     }
 
+
     return selectedView === 'desktop' ?
         <img
             src={src}

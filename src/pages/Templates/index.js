@@ -12,7 +12,8 @@ export default function Index() {
     const {
         categories,
         selectedCategory, setSelectedCategory,
-        selectedTemplate, setSelectedTemplate
+        selectedTemplate, setSelectedTemplate,
+        setSelectedView,
     } = AppState();
     const categoryNameInUrl = useParams()?.categoryName;
     const [searchQuery, setSearchQuery] = useState('');
@@ -30,8 +31,10 @@ export default function Index() {
         });
     }, [categoryNameInUrl, selectedCategory, selectedCategory?.templates]);
 
-    const handleTemplateClick = (template) => setSelectedTemplate(template);
-
+    const handleTemplateClick = (template) => {
+        setSelectedView('desktop');
+        setSelectedTemplate(template);
+    }
     return (
         <>
             <table className='templatespg-header'
