@@ -60,6 +60,7 @@ export default function Index() {
                                         alt={template.name}
                                         onClick={() => handleTemplateClick(template)}
                                         className='img-fluid template-feature-image'
+                                        loading='lazy'
                                     />
                                     <h5 className='template-name-on-ft-image py-2'
                                         style={{

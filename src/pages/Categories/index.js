@@ -54,6 +54,7 @@ export default function Categories() {
                                             src={category.image}
                                             alt={category.name}
                                             className="category-image img-fluid"
+                                            loading='lazy'
                                         />
                                         <div className="category-img-name-middle">
                                             <div className='category-name-on-img'>{category.name}</div>

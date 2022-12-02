@@ -24,7 +24,8 @@ export default function Template() {
                 overflow: 'hidden',
             }}
             className='img-fluid '
-            onError={onError}
+            // onError={onError}
+            // loading='lazy'
         />
         :
         <img src={src}
@@ -37,5 +38,6 @@ export default function Template() {
             }}
             className='img-fluid'
             onError={onError}
+            // loading='lazy'
         />;
 }
