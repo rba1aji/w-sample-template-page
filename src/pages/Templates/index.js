@@ -35,6 +35,7 @@ export default function Index() {
         setSelectedView('desktop');
         setSelectedTemplate(template);
     }
+    
     return (
         <>
             <table className='templatespg-header'

@@ -31,16 +31,16 @@ export default function Filters(props) {
 
             <table // filter options
                 style={{
-                    width: "50vw",
-                    // width: "27.5vw",
+                    // width: "50vw",
+                    width: "27.5vw",
                     display: showFilters ? "block" : "none",
                 }}
             >
                 <tbody>
                     <tr>{
-                        [<Search {...props} />, <Select />]
+                        [<Search {...props} />, <Select {...props} />]
                             .map((filter, index) => {
-                                // if (index === 0) return null;
+                                if (index === 0) return null;
                                 return (
                                     <td
                                         key={index}
