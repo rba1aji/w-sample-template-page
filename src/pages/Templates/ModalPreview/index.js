@@ -2,6 +2,7 @@ import { AppState } from "../../../reducers/AppContext";
 import { Modal } from "react-bootstrap";
 import '../../../styles/ModalPreview.css';
 import ModalHeader from "./ModalHeader";
+import Template from "./Template";
 
 export default function ModalPreview() {
     const {
@@ -39,21 +40,7 @@ export default function ModalPreview() {
                     >
                         {
                             selectedTemplate[selectedView] ?
-                                <img
-                                    src={selectedTemplate[selectedView]}
-                                    alt={selectedTemplate?.name}
-                                    style={{
-                                        display: 'block',
-                                        margin: 'auto',
-                                        width: selectedView === 'mobile' ? '35%' : '90%',
-                                        overflow: 'hidden',
-                                    }}
-                                    className='img-fluid '
-                                    onError={(e) => {
-                                        e.target.onerror = null;
-                                        e.target.src = "https://www.freeiconspng.com/uploads/no-image-icon-11.PNG";
-                                    }}
-                                />
+                                <Template />
                                 :
                                 <h3 className='text-center pt-5 mt-5 fw-normal'>No Preview Available</h3>
                         }
