@@ -13,31 +13,39 @@ export default function Template() {
     }
 
 
-    return selectedView === 'desktop' ?
-        <img
-            src={src}
-            alt={alt}
-            style={{
-                display: 'block',
-                margin: 'auto',
-                width: '90%',
-                overflow: 'hidden',
-            }}
-            className='img-fluid '
-            // onError={onError}
-            // loading='lazy'
-        />
-        :
-        <img src={src}
-            alt={alt}
-            style={{
-                display: 'block',
-                margin: 'auto',
-                width: '35%',
-                overflow: 'hidden',
-            }}
-            className='img-fluid'
-            onError={onError}
-            // loading='lazy'
-        />;
+    return (
+        <>
+            {
+                selectedView === 'desktop' &&
+                <img
+                    src={src}
+                    alt={alt}
+                    style={{
+                        display: 'block',
+                        margin: 'auto',
+                        width: '90%',
+                        overflow: 'hidden',
+                    }}
+                    className='img-fluid '
+                // onError={onError}
+                // loading='lazy'
+                />
+            }
+            {
+                selectedView === 'mobile' &&
+                <img src={src}
+                    alt={alt}
+                    style={{
+                        display: 'block',
+                        margin: 'auto',
+                        width: '35%',
+                        overflow: 'hidden',
+                    }}
+                    className='img-fluid'
+                    onError={onError}
+                // loading='lazy'
+                />
+            }
+        </>
+    );
 }
