@@ -14,25 +14,24 @@
 }
 
 .template-feature-image:hover {
-    transform: scale(1.025);
-    transition: 0.5s;
     animation: hover-scroll 10s ease-out;
 }
 
 @keyframes hover-scroll {
     0% {
         object-position: 0% 0%;
+        padding: auto;
     }
 
     100% {
         object-position: 0% 100%;
+        padding: auto;
     }
 }
 
 .template-name-on-ft-image {
-    width: 405px;
+    width: 400px;
     position: absolute;
-    top: 94%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -40,7 +39,7 @@
     color: white;
     font-size: 160%;
     font-weight: bold;
-    border-radius: 0 0 15px 15px ;
+    border-radius: 0 0 15px 15px;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
 }
