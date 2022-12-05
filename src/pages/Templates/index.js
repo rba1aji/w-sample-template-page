@@ -48,7 +48,7 @@ export default function Index() {
                 {
                     templates?.map((template, index) => {
                         if (searchQuery) {
-                            if (template.name !== searchQuery) {
+                            if (!template?.name?.toLowerCase()?.includes(searchQuery?.toLowerCase())) {
                                 return null;
                             }
                         }

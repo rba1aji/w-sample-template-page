@@ -1,4 +1,4 @@
-import { Button, Nav, Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap'
 
 export default function Header() {
