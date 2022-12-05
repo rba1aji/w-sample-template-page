@@ -1,25 +1,25 @@
 import { InputGroup, Form } from "react-bootstrap";
-import { AppState } from "../../reducers/AppContext";
-import SearchSuggestion from "./Select";
 
-export default function Search() {
-    const { categorySearchQuery, setCategorySearchQuery } = AppState();
+export default function Search(props) {
+    const { searchQuery, setSearchQuery, label, placeholder } = props;
 
     return (
         <>
-            <Form.Label className='mb-1'>Search category</Form.Label>
+            {
+                label && <Form.Label className='mb-1'>{label}</Form.Label>
+            }
             <InputGroup size='sm'>
                 <Form.Control
-                    className='bg-transparent '
-                    placeholder=""
+                    className='bg-transparent'
+                    placeholder={placeholder}
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
                     style={{
                         color: 'white',
                         borderRightColor: 'transparent'
                     }}
-                    value={categorySearchQuery}
-                    onChange={(e) => setCategorySearchQuery(e.target.value)}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <InputGroup.Text
                     id="basic-addon2"
@@ -29,7 +29,6 @@ export default function Search() {
                     <i className="bi bi-search text-white"></i>
                 </InputGroup.Text>
             </InputGroup>
-            <SearchSuggestion />
         </>
     );
 }

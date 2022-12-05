@@ -3,13 +3,14 @@ import { Link, } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import '../../styles/Categories.css';
 import Filters from './Filters';
+import { useState } from 'react';
 
 export default function Categories() {
-
+    const [searchQuery, setSearchQuery] = useState('');
     const {
         categories,
-        setSelectedCategory, setSelectedView,
-        categorySearchQuery
+        setSelectedCategory,
+        setSelectedView,
     } = AppState();
 
     const handleCategoryClick = (category) => {
@@ -27,15 +28,18 @@ export default function Categories() {
                 className='categories-page-container'
             >
 
-                <Filters />
+                <Filters
+                    searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+                    label={'Search category'}
+                />
 
                 <br /><br />
 
                 <Row xs={1} md={4} className="g-4 text-center">
                     {
                         categories.map((category, index) => {
-                            if (categorySearchQuery) {
-                                if (!category.name.toLowerCase().includes(categorySearchQuery.toLowerCase())) {
+                            if (searchQuery) {
+                                if (!category.name.toLowerCase().includes(searchQuery.toLowerCase())) {
                                     return null;
                                 }
                             }
@@ -50,6 +54,7 @@ export default function Categories() {
                                             src={category.image}
                                             alt={category.name}
                                             className="category-image img-fluid"
+                                            loading='lazy'
                                         />
                                         <div className="category-img-name-middle">
                                             <div className='category-name-on-img'>{category.name}</div>
